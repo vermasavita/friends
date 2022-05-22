@@ -1,6 +1,5 @@
 import logo from "../../Assets/Friends.png";
-import "./Auth.css";
-const Login = () => {
+const Signup = () => {
   return (
     <div className="w-full h-screen flex flex-col justify-center bg-slate-100">
       <div className="w-full px-5 mx-auto text-center sm:max-w-xl">
@@ -14,10 +13,30 @@ const Login = () => {
           </div>
           <div className="px-12 py-4 pb-8 sm:px-6">
             <h2 className="text-2xl flex justify-center font-semibold border-b-2 border-blue-400 pb-2 sm:text-xl">
-              Sign In
+              Sign Up
             </h2>
             <div className="pt-8">
-              <label htmlFor="" className="block font-semibold">
+              <div className="flex flex-col gap-5">
+                <div>
+                  <label htmlFor="" className="block font-semibold">
+                    First Name:
+                  </label>
+                  <input
+                    type="text"
+                    className=" border w-full h-5 px-3 py-5 mt-1 hover:outline-none focus:outline-none focus:ring-1 focus:ring-blue-400 rounded-md sm:py-4"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="" className="block font-semibold ">
+                    Last Name:
+                  </label>
+                  <input
+                    type="text"
+                    className=" border w-full h-5 px-3 py-5 mt-1 hover:outline-none focus:outline-none focus:ring-1 focus:ring-blue-400 rounded-md sm:py-4"
+                  />
+                </div>
+              </div>
+              <label htmlFor="" className="block font-semibold mt-5">
                 Username or Email:
               </label>
               <input
@@ -28,6 +47,16 @@ const Login = () => {
               />
               <label htmlFor="" className="block font-semibold mt-5">
                 Password:
+              </label>
+              <input
+                type="text"
+                name=""
+                id=""
+                className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-blue-400 rounded-md sm:py-4"
+              />
+
+              <label htmlFor="" className="block font-semibold mt-5">
+                Confirm Password:
               </label>
               <input
                 type="text"
@@ -52,4 +81,4 @@ const Login = () => {
   );
 };
 
-export { Login };
+export { Signup };
