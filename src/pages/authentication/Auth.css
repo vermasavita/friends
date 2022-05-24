@@ -26,4 +26,8 @@
     width: 100%;
     padding: 0 2rem;
   }
+  
+  .list:hover {
+    background: none !important;
+  }
 }
