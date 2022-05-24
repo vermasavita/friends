@@ -1,8 +1,10 @@
 import logo from "../../Assets/Friends.png";
+import { NavLink } from "react-router-dom";
+
 const Signup = () => {
   return (
     <div className="w-full h-screen flex flex-col justify-center bg-slate-100 ">
-      <div className="w-2/5 py-3 sm:max-w-xl mx-auto text-center sm:w-11/12  px-4 py-6">
+      <div className="w-2/5 sm:max-w-xl mx-auto text-center sm:w-11/12  px-4 py-6">
         <div className="mt-4 bg-white shadow-md rounded-lg text-left">
           <div className="h-2 bg-blue-500 rounded-t-md"></div>
           <div className="flex justify-center py-5 gap-4 items-center">
@@ -72,7 +74,9 @@ const Signup = () => {
               </button>
             </div>
             <div className="font-semibold text-center">
-              <button>Create New Account</button>
+              <NavLink to="/login">
+                <button>Create New Account</button>
+              </NavLink>
             </div>
           </div>
         </div>

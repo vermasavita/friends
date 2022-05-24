@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Login, Signup, Bookmark, AllPost } from "./pages";
+import { Home, Login, Signup, Bookmark, AllPost, Profile } from "./pages";
 function App() {
   return (
     <div className="App">
@@ -21,6 +21,14 @@ function App() {
             element={
               <Home>
                 <Bookmark />
+              </Home>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <Home>
+                <Profile/>
               </Home>
             }
           />

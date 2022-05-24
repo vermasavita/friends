@@ -1,4 +1,5 @@
 import logo from "../../Assets/Friends.png";
+import { NavLink } from "react-router-dom";
 import "./Auth.css";
 const Login = () => {
   return (
@@ -42,8 +43,10 @@ const Login = () => {
                 Sign in with Text Credential
               </button>
             </div>
-            <div className="font-semibold text-center">
-              <button>Create New Account</button>
+            <div className="font-semibold text-center ">
+              <NavLink to="/signup">
+                <button>Create New Account</button>
+              </NavLink>
             </div>
           </div>
         </div>

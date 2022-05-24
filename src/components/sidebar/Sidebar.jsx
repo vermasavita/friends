@@ -31,15 +31,18 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li className="py-2 text-xl flex gap-2 items-center px-3 hover:bg-white shadow-current cursor-pointer rounded-md mb-3 md:mb-0">
-            <NavLink to="/">
+            <NavLink to="/profile">
               <i class="bx bxs-user-circle mr-3"></i>
               <span className="md:hidden">Profile</span>
             </NavLink>
           </li>
           <li className="py-2 text-xl flex gap-2 items-center px-3 hover:bg-white shadow-current cursor-pointer rounded-md mb-3 md:mb-0">
-            <i class="bx bx-log-out mr-3"></i>
-            <span className="md:hidden">Logout</span>
+            <NavLink to="/login">
+              <i class="bx bx-log-out mr-3"></i>
+              <span className="md:hidden">Logout</span>
+            </NavLink>
           </li>
+
           <li className="py-2 justify-center bg-blue-400 text-white text-xl flex gap-2 items-center px-3 cursor-pointer rounded-md mb-3 md:hidden">
             Post
           </li>
