@@ -1,8 +1,8 @@
 import logo from "../../Assets/Friends.png";
 const Signup = () => {
   return (
-    <div className="w-full h-screen flex flex-col justify-center bg-slate-100">
-      <div className="w-full px-5 mx-auto text-center sm:max-w-xl">
+    <div className="w-full h-screen flex flex-col justify-center bg-slate-100 ">
+      <div className="w-2/5 py-3 sm:max-w-xl mx-auto text-center sm:w-11/12  px-4 py-6">
         <div className="mt-4 bg-white shadow-md rounded-lg text-left">
           <div className="h-2 bg-blue-500 rounded-t-md"></div>
           <div className="flex justify-center py-5 gap-4 items-center">

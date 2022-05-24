@@ -2,8 +2,8 @@ import logo from "../../Assets/Friends.png";
 import "./Auth.css";
 const Login = () => {
   return (
-    <div className="w-full h-screen flex flex-col justify-center bg-slate-100">
-      <div className="w-full px-5 mx-auto text-center sm:max-w-xl">
+    <div className="w-full h-screen px-4 py-6 flex flex-col justify-center bg-slate-100">
+      <div className="w-2/5 py-3 sm:max-w-xl mx-auto text-center sm:w-11/12">
         <div className="mt-4 bg-white shadow-md rounded-lg text-left">
           <div className="h-2 bg-blue-500 rounded-t-md"></div>
           <div className="flex justify-center py-5 gap-4 items-center">
@@ -33,7 +33,7 @@ const Login = () => {
                 type="text"
                 name=""
                 id=""
-                className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-blue-400 rounded-md sm:py-4"
+                className=" border w-full h-5 px-3 py-5 mt-1 hover:outline-none focus:outline-none focus:ring-1 focus:ring-blue-400 rounded-md sm:py-4"
               />
             </div>
 
