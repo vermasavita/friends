@@ -1,0 +1,33 @@
+.title {
+  font-family: Handlee, cursive;
+  color: rgb(96 165 250);
+}
+
+.search {
+  z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .home {
+    width: 90vw !important;
+  }
+  .sidebar {
+    position: fixed !important;
+    bottom: 0 !important;
+    top: 93.9%;
+    z-index: 30 !important;
+  }
+
+  .sidebar .bx {
+    color: white;
+  }
+
+  .sidebarlist {
+    width: 100%;
+    padding: 0 2rem;
+  }
+  
+  .list:hover {
+    background: none !important;
+  }
+}
