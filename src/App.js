@@ -3,7 +3,7 @@ import { Home, Login, Signup, Bookmark, AllPost, Profile } from "./pages";
 import { ToastContainer } from "react-toastify";
 import { RequireAuth } from "./RequiresAuth";
 import "react-toastify/dist/ReactToastify.css";
-function App() {
+const App = () => {
   return (
     <div className="App">
       <ToastContainer
@@ -62,6 +62,6 @@ function App() {
       </Router>
     </div>
   );
-}
+};
 
 export default App;
