@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "./authSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
