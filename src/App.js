@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, Login, Signup, Bookmark, AllPost, Profile } from "./pages";
 import { ToastContainer } from "react-toastify";
+import { RequireAuth } from "./RequiresAuth";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
@@ -21,13 +22,22 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <RequireAuth>
+                <Home />
+              </RequireAuth>
+            }
+          />
           <Route
             path="/explore"
             element={
-              <Home>
-                <AllPost />
-              </Home>
+              <RequireAuth>
+                <Home>
+                  <AllPost />
+                </Home>
+              </RequireAuth>
             }
           />
           <Route
@@ -41,9 +51,11 @@ function App() {
           <Route
             path="/profile"
             element={
-              <Home>
-                <Profile />
-              </Home>
+              <RequireAuth>
+                <Home>
+                  <Profile />
+                </Home>
+              </RequireAuth>
             }
           />
         </Routes>
