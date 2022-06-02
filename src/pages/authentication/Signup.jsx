@@ -1,7 +1,7 @@
 import logo from "../../Assets/Friends.png";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { signUpUser } from "./authSlice";
 

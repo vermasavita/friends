@@ -1,8 +1,8 @@
 import logo from "../../Assets/Friends.png";
 import { NavLink } from "react-router-dom";
 import "./Auth.css";
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { loginUser } from "./authSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
