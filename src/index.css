@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .Toastify__toast {
-  font-size: 1.5rem !important;
+  font-size: 1rem !important;
 }
