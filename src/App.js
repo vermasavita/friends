@@ -1,19 +1,44 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, Login, Signup, Bookmark, AllPost, Profile } from "./pages";
-function App() {
+import { ToastContainer } from "react-toastify";
+import { RequireAuth } from "./RequiresAuth";
+import "react-toastify/dist/ReactToastify.css";
+
+const App = () => {
   return (
     <div className="App">
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        theme="colored"
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/"
+            element={
+              <RequireAuth>
+                <Home />
+              </RequireAuth>
+            }
+          />
           <Route
             path="/explore"
             element={
-              <Home>
-                <AllPost />
-              </Home>
+              <RequireAuth>
+                <Home>
+                  <AllPost />
+                </Home>
+              </RequireAuth>
             }
           />
           <Route
@@ -27,15 +52,17 @@ function App() {
           <Route
             path="/profile"
             element={
-              <Home>
-                <Profile/>
-              </Home>
+              <RequireAuth>
+                <Home>
+                  <Profile />
+                </Home>
+              </RequireAuth>
             }
           />
         </Routes>
       </Router>
     </div>
   );
-}
+};
 
 export default App;

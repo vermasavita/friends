@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.Toastify__toast {
+  font-size: 1.5rem !important;
+}
