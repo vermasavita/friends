@@ -7,7 +7,6 @@ const Home = ({children}) => {
       <div className="w-2/4 relative md:pr-0 flex flex-col items-center xl:mx-0 lg:w-2/3 pr-5 home">
         <Search />
         <div className="flex justify-center">{children}</div>
-        
       </div>
       <Follow />
     </div>

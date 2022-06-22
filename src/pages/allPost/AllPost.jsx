@@ -1,4 +1,5 @@
 import { SinglePost } from "../home/components/SinglePost";
+import { posts } from "../../backend/db/posts";
 
 const AllPost = () => {
   return (
@@ -12,15 +13,7 @@ const AllPost = () => {
         </button>
       </div>
       <div className="flex flex-col">
-        <SinglePost />
-        <SinglePost />
-        <SinglePost />
-        <SinglePost />
-
-        <SinglePost />
-        <SinglePost />
-        <SinglePost />
-        <SinglePost />
+        {posts.map(post => (<SinglePost key={post._id} {...post}/>))}
       </div>
     </div>
   );
