@@ -1,16 +1,15 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers } from "../../profile/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const SinglePost = ({ post }) => {
-  const dispatch = useDispatch
+  const dispatch = useDispatch;
+  const navigate = useNavigate();
   const { allUsers } = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.auth);
   const userInfo =
     allUsers && allUsers?.find((user) => user.username === post.username);
 
-    console.log(userInfo)
-  
-  return (
+  return userInfo ? (
     <div
       className="bg-white flex flex-col px-6 py-4 rounded-md shadow w-full mt-3 "
       key={post._id}
@@ -18,11 +17,14 @@ const SinglePost = ({ post }) => {
       <div className="flex cursor-pointer">
         <div className="w-13">
           <img
-            src={userInfo.avatar}
+            src={
+              user.username === userInfo?.username
+                ? user.avatar
+                : userInfo.avatar
+            }
             className="h-11 w-12 object-cover rounded-full sm:h-10 sm:w-11"
           />
         </div>
-
         <div className="flex justify-between mx-1 px-1 w-full items-center">
           <div className="flex gap-2 items-center ">
             <span className="text-lg font-semibold">{`${userInfo.firstName} ${userInfo.lastName}`}</span>
@@ -39,7 +41,7 @@ const SinglePost = ({ post }) => {
         </div>
         <div className=" text-gray-600 flex gap-4 mt-4 cursor-pointer text-sm ">
           <span className="flex items-center gap-1">
-            <i className="bx bx-heart text-base"></i>5
+            <i className="bx bx-heart text-base"></i>
           </span>
           <span className="flex items-center gap-1">
             <i className="bx bx-bookmark"></i>
@@ -63,6 +65,8 @@ const SinglePost = ({ post }) => {
         </div>
       </div>
     </div>
+  ) : (
+    <></>
   );
 };
 

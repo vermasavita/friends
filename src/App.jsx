@@ -1,5 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Login, Signup, Bookmark, AllPost, Profile } from "./pages";
+import {
+  Wrapper,
+  Login,
+  Signup,
+  Bookmark,
+  AllPost,
+  Profile,
+  Feed,
+} from "./pages";
 import { ToastContainer } from "react-toastify";
 import { RequireAuth } from "./RequiresAuth";
 import "react-toastify/dist/ReactToastify.css";
@@ -42,7 +50,9 @@ const App = () => {
             path="/"
             element={
               <RequireAuth>
-                <Home />
+                <Wrapper>
+                  <Feed />
+                </Wrapper>
               </RequireAuth>
             }
           />
@@ -50,27 +60,28 @@ const App = () => {
             path="/explore"
             element={
               <RequireAuth>
-                <Home>
+                <Wrapper>
                   <AllPost />
-                </Home>
+                </Wrapper>
               </RequireAuth>
             }
           />
+          <Route path="" />
           <Route
             path="/bookmark"
             element={
-              <Home>
+              <Wrapper>
                 <Bookmark />
-              </Home>
+              </Wrapper>
             }
           />
           <Route
             path="/profile"
             element={
               <RequireAuth>
-                <Home>
+                <Wrapper>
                   <Profile />
-                </Home>
+                </Wrapper>
               </RequireAuth>
             }
           />

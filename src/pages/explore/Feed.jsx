@@ -1,8 +1,7 @@
 import { SinglePost } from "../home/components/SinglePost";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPost, getUserPost } from "../home/postSlice";
-import { useState, useEffect } from "react";
-const AllPost = () => {
+const Feed = () => {
   const dispatch = useDispatch();
   const { allPosts } = useSelector((state) => state.post);
  
@@ -26,4 +25,4 @@ const AllPost = () => {
   );
 };
 
-export { AllPost };
+export { Feed };

@@ -1,21 +1,19 @@
 import { SinglePost } from "../home/components/SinglePost";
 import { UserProfile } from "./components/UserProfile";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getUserPost } from "../home/postSlice";
+import { useSelector } from "react-redux";
 const Profile = () => {
-  const dispatch = useDispatch();
-  const { allPosts } = useSelector((state) => state.post);
-  const { user } = useSelector((state) => state.auth);
-  console.log(allPosts);
-  useEffect(() => {
-    dispatch(getUserPost(user.username));
-  }, [allPosts]);
+  const { userPosts } = useSelector((state) => state.post);
 
   return (
     <div className="w-4/5 xl:w-full px-1 h-full ">
       <UserProfile />
-      {/* <SinglePost/> */}
+      {userPosts.length > 0 ? (
+        userPosts.map((post) => <SinglePost key={post._id} post={post} />)
+      ) : (
+        <div>
+          <h1>No Post</h1>
+        </div>
+      )}
     </div>
   );
 };

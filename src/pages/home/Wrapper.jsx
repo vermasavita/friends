@@ -1,6 +1,6 @@
 import { Follow, Search, Sidebar } from "../../components";
 
-const Home = ({children}) => {
+const Wrapper = ({children}) => {
   return (
     <div className="flex bg-slate-100 min-h-screen md:w-full justify-center relative">
       <Sidebar />
@@ -13,4 +13,4 @@ const Home = ({children}) => {
   );
 };
 
-export { Home };
+export { Wrapper };
