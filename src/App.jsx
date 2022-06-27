@@ -4,8 +4,22 @@ import { ToastContainer } from "react-toastify";
 import { RequireAuth } from "./RequiresAuth";
 import "react-toastify/dist/ReactToastify.css";
 import { PostCardM } from "./components";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getAllPost, getUserPost } from "./pages/home/postSlice";
+import { getUsers } from "./pages/profile/userSlice";
 
 const App = () => {
+  const dispatch = useDispatch();
+  const { token, user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (token) {
+      dispatch(getAllPost());
+      dispatch(getUserPost(user.username));
+      dispatch(getUsers());
+    }
+  }, [token]);
   return (
     <div className="App">
       <ToastContainer
@@ -61,7 +75,7 @@ const App = () => {
             }
           />
         </Routes>
-        <PostCardM/>
+        <PostCardM />
       </Router>
     </div>
   );

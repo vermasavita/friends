@@ -1,7 +1,13 @@
 import { SinglePost } from "../home/components/SinglePost";
-import { posts } from "../../backend/db/posts";
-
+import { useDispatch, useSelector } from "react-redux";
+import { getAllPost, getUserPost } from "../home/postSlice";
+import { useState, useEffect } from "react";
 const AllPost = () => {
+  const dispatch = useDispatch();
+  const { allPosts } = useSelector((state) => state.post);
+  console.log(allPosts)
+ 
+
   return (
     <div className="w-4/5 xl:w-full px-1">
       <div className=" rounded-md shadow w-full flex justify-between items-center  bg-white">
@@ -13,7 +19,9 @@ const AllPost = () => {
         </button>
       </div>
       <div className="flex flex-col">
-        {posts.map(post => (<SinglePost key={post._id} {...post}/>))}
+        {allPosts.map((post) => (
+          <SinglePost key={post._id} post={post} />
+        ))}
       </div>
     </div>
   );

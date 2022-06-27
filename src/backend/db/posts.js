@@ -11,41 +11,14 @@ export const posts = [
     _id: uuid(),
     content: `In India, everyone is a self taught developer. Fact. Not kidding. The education part of college failed all of us.`,
     likes: {
-      likeCount: 3,
-      likedBy: [
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "guestuser",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          _id: uuid(),
-          firstName: "Flipkart",
-          lastName: "",
-          username: "flipkart",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1267713887165485061/WUR4QXtd_400x400.jpg",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-
-    firstName: "Swiggy",
-    lastName: "Cares",
     username: "SwiggyCares",
+    bookmark: [],
     createdAt: new Date("Feb 23 2022 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
     comments: [],
   },
 
@@ -55,56 +28,14 @@ export const posts = [
     _id: uuid(),
     content: `Sometimes, all the therapy you need is talking to friends.`,
     likes: {
-      likeCount: 5,
-      likedBy: [
-        {
-          _id: uuid(),
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-
-        {
-          _id: uuid(),
-          firstName: "Amazon",
-          lastName: "India",
-          username: "amazonIN",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Paytm",
-    lastName: "Care",
     username: "paytmcare",
+    bookmark: [],
     createdAt: new Date("March 13 2022 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
     comments: [],
   },
 
@@ -116,39 +47,12 @@ export const posts = [
     likes: {
       likeCount: 3,
       dislikedBy: [],
-      likedBy: [
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          _id: uuid(),
-          firstName: "Flipkart",
-          lastName: "",
-          username: "flipkart",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1267713887165485061/WUR4QXtd_400x400.jpg",
-        },
-        {
-          _id: uuid(),
-          firstName: "Amazon",
-          lastName: "India",
-          username: "amazonIN",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
-        },
-      ],
+      likedBy: [],
     },
     username: "guestuser",
-    firstName: "Guest",
-    lastName: "User",
+    bookmark: [],
     createdAt: new Date("May 03 2022 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     comments: [],
   },
 
@@ -159,33 +63,14 @@ export const posts = [
     content: `Student: Does patience play an important role here?
 	Teacher: Where does it not play, my friend?`,
     likes: {
-      likeCount: 2,
-      likedBy: [
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          _id: uuid(),
-          firstName: "Amazon",
-          lastName: "India",
-          username: "amazonIN",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Snapdeal",
-    lastName: "",
     username: "Snapdeal",
+    bookmark: [],
     createdAt: new Date("April 18 2022 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
     comments: [],
   },
   /****************************************************************/
@@ -197,54 +82,14 @@ export const posts = [
 	Because, we are never going to get everything.
 	And worse, the one thing that we truly want, will remain under-served.`,
     likes: {
-      likeCount: 5,
-      likedBy: [
-        {
-          _id: uuid(),
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "guestuser",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Amazon",
-    lastName: "India",
     username: "amazonIN",
+    bookmark: [],
     createdAt: new Date("Jan 01 2022 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
     comments: [],
   },
   /****************************************************************/
@@ -253,33 +98,14 @@ export const posts = [
     _id: uuid(),
     content: `Describe your relationship with JavaScript with one word.`,
     likes: {
-      likeCount: 2,
-      likedBy: [
-        {
-          _id: uuid(),
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Paytm",
-    lastName: "Care",
     username: "paytmcare",
+    bookmark: [],
     createdAt: new Date("Dec 15 2020 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
     comments: [],
   },
   /****************************************************************/
@@ -288,65 +114,14 @@ export const posts = [
     _id: uuid(),
     content: `"If they wrote it to make money, don't read it." - @naval`,
     likes: {
-      likeCount: 6,
-      likedBy: [
-        {
-          _id: uuid(),
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-        /****************************************************************/
-
-        {
-          _id: uuid(),
-          firstName: "Amazon",
-          lastName: "India",
-          username: "amazonIN",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          _id: uuid(),
-          firstName: "Flipkart",
-          lastName: "",
-          username: "flipkart",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1267713887165485061/WUR4QXtd_400x400.jpg",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
     username: "guestuser",
-    firstName: "Guest",
-    lastName: "User",
+    bookmark: [],
     createdAt: new Date("May 12 2022 10:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     comments: [],
   },
   /****************************************************************/
@@ -355,75 +130,29 @@ export const posts = [
     _id: uuid(),
     content: `“"There are no get rich quick schemes. That’s just someone else getting rich off you." - @naval`,
     likes: {
-      likeCount: 3,
-      likedBy: [
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-
-        {
-          _id: uuid(),
-          firstName: "Amazon",
-          lastName: "India",
-          username: "amazonIN",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
-        },
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "guestuser",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Flipkart",
-    lastName: "",
     username: "flipkart",
+    bookmark: [],
     createdAt: new Date("Feb 28 2022 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/1267713887165485061/WUR4QXtd_400x400.jpg",
     comments: [],
   },
   /****************************************************************/
-
   {
     _id: uuid(),
     content: `The journey of a thousand miles begins with one step. -Lao Tzu`,
     likes: {
-      likeCount: 2,
-      likedBy: [
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "guestuser",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Swiggy",
-    lastName: "Cares",
     username: "SwiggyCares",
+    bookmark: [],
     createdAt: new Date("October 09 2021 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
     comments: [],
   },
   /****************************************************************/
@@ -432,56 +161,14 @@ export const posts = [
     _id: uuid(),
     content: `The Golden State is cooking its golden geese. -@melonmusk`,
     likes: {
-      likeCount: 5,
-      likedBy: [
-        {
-          _id: uuid(),
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-
-        {
-          _id: uuid(),
-          firstName: "Amazon",
-          lastName: "India",
-          username: "amazonIN",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
-        },
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "michellegore",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Flipkart",
-    lastName: "",
     username: "flipkart",
+    bookmark: [],
     createdAt: new Date("November 14 2021 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/1267713887165485061/WUR4QXtd_400x400.jpg",
     comments: [],
   },
   /****************************************************************/
@@ -490,46 +177,14 @@ export const posts = [
     _id: uuid(),
     content: `Not to mention potential bugs in the code. Open source is the way to go to solve both trust and efficacy.`,
     likes: {
-      likeCount: 4,
-      likedBy: [
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "guestuser",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-        {
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Paytm",
-    lastName: "Care",
     username: "paytmcare",
+    bookmark: [],
     createdAt: new Date("February 16 2022 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
     comments: [],
   },
   /****************************************************************/
@@ -538,25 +193,14 @@ export const posts = [
     _id: uuid(),
     content: `The greatest glory in living lies not in never falling, but in rising every time we fall. -Nelson Mandela`,
     likes: {
-      likeCount: 1,
-      likedBy: [
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "guestuser",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Amazon",
-    lastName: "India",
     username: "amazonIN",
+    bookmark: [],
     createdAt: new Date("April 05 2021 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
     comments: [],
   },
   /****************************************************************/
@@ -565,50 +209,14 @@ export const posts = [
     _id: uuid(),
     content: `“Do not pity the dead, Harry. Pity the living, and, above all those who live without love.” - Albus Dumbledore`,
     likes: {
-      likeCount: 4,
-      likedBy: [
-        {
-          _id: uuid(),
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-        /****************************************************************/
-
-        {
-          _id: uuid(),
-          firstName: "Amazon",
-          lastName: "India",
-          username: "amazonIN",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
-        },
-      ],
+      likeCount: 0,
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Paytm",
-    lastName: "Care",
     username: "paytmcare",
+    bookmark: [],
     createdAt: new Date("April 03 2022 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
     comments: [],
   },
   /****************************************************************/
@@ -618,40 +226,14 @@ export const posts = [
     content: `"The larger the herd, the lower the returns." - @naval`,
     likes: {
       likeCount: 3,
-      likedBy: [
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "guestuser",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-        {
-          _id: uuid(),
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-      ],
+      likedBy: [],
       dislikedBy: [],
     },
 
-    firstName: "Paytm",
-    lastName: "Care",
     username: "paytmcare",
+    bookmark: [],
     createdAt: new Date("March 26 2022 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
     comments: [],
   },
   /****************************************************************/
@@ -662,48 +244,13 @@ export const posts = [
       "Your social media following doesn’t matter when you can’t deliver the quality of work you promised to your customers or clients.",
     likes: {
       likeCount: 4,
-      likedBy: [
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "guestuser",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-
-        {
-          _id: uuid(),
-          firstName: "Amazon",
-          lastName: "India",
-          username: "amazonIN",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          _id: uuid(),
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-      ],
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Snapdeal",
-    lastName: "",
     username: "Snapdeal",
+    bookmark: [],
     createdAt: new Date("April 03 2021 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
     comments: [],
   },
   /****************************************************************/
@@ -713,32 +260,13 @@ export const posts = [
     content: "Today is my best day, how's yours?",
     likes: {
       likeCount: 2,
-      likedBy: [
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          _id: uuid(),
-          firstName: "Flipkart",
-          lastName: "",
-          username: "flipkart",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1267713887165485061/WUR4QXtd_400x400.jpg",
-        },
-      ],
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Swiggy",
-    lastName: "Cares",
     username: "SwiggyCares",
+    bookmark: [],
     createdAt: new Date("August 02 2021 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
     comments: [],
   },
   /****************************************************************/
@@ -752,8 +280,7 @@ export const posts = [
       dislikedBy: [],
     },
     username: "guestuser",
-    firstName: "Guest",
-    lastName: "User",
+    bookmark: [],
     createdAt: new Date("July 18 2021 12:31:25"),
     updatedAt: formatDate(),
     avatar:
@@ -761,31 +288,21 @@ export const posts = [
     comments: [
       {
         _id: uuid(),
-        firstName: "Swiggy",
-        lastName: "Cares",
         username: "SwiggyCares",
-        avatar:
-          "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
         text: "Live users are awesome",
         votes: {
           upvotedBy: [],
           downvotedBy: [],
         },
-        createdAt: new Date("Jan 05 2021 12:31:25"),
       },
       {
         _id: uuid(),
-        firstName: "Paytm",
-        lastName: "Care",
         username: "paytmcare",
-        avatar:
-          "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
         text: "yes you are right!",
         votes: {
           upvotedBy: [],
           downvotedBy: [],
         },
-        createdAt: new Date("Jan 08 2021 12:31:25"),
       },
     ],
   },
@@ -796,33 +313,13 @@ export const posts = [
     content: "Just read Kurt Vonnegaut's Slaughter House 5 and it's amazing!",
     likes: {
       likeCount: 2,
-      likedBy: [
-        {
-          _id: uuid(),
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-      ],
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Paytm",
-    lastName: "Care",
     username: "paytmcare",
+    bookmark: [],
     createdAt: new Date("July 13 2021 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
     comments: [],
   },
   /****************************************************************/
@@ -833,55 +330,13 @@ export const posts = [
       "I'll rather have pain of discipline than pain of regret. Getting there💪 and anyone reading this believe in yourself and you'll get there eventually.",
     likes: {
       likeCount: 5,
-      likedBy: [
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-
-        {
-          _id: uuid(),
-          firstName: "Amazon",
-          lastName: "India",
-          username: "amazonIN",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
-        },
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "guestuser",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-        {
-          _id: uuid(),
-          firstName: "Flipkart",
-          lastName: "",
-          username: "flipkart",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1267713887165485061/WUR4QXtd_400x400.jpg",
-        },
-      ],
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Paytm",
-    lastName: "Care",
     username: "paytmcare",
+    bookmark: [],
     createdAt: new Date("August 05 2022 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
     comments: [],
   },
   /****************************************************************/
@@ -891,33 +346,13 @@ export const posts = [
     content: "Lorem ipsum dolor sit amet.",
     likes: {
       likeCount: 2,
-      likedBy: [
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-
-        {
-          _id: uuid(),
-          firstName: "Amazon",
-          lastName: "India",
-          username: "amazonIN",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
-        },
-      ],
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Flipkart",
-    lastName: "",
     username: "flipkart",
+    bookmark: [],
     createdAt: new Date("October 08 2021 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/1267713887165485061/WUR4QXtd_400x400.jpg",
     comments: [],
   },
   /****************************************************************/
@@ -927,38 +362,13 @@ export const posts = [
     content: "I am very good at writing code, React JS ♥",
     likes: {
       likeCount: 3,
-      likedBy: [
-        {
-          firstName: "Guest",
-          lastName: "User",
-          username: "guestuser",
-          avatar:
-            "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        },
-        {
-          firstName: "Swiggy",
-          lastName: "Cares",
-          username: "SwiggyCares",
-          avatar:
-            "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
-        },
-        {
-          firstName: "Paytm",
-          lastName: "Care",
-          username: "paytmcare",
-          avatar:
-            "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
-        },
-      ],
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Snapdeal",
-    lastName: "",
     username: "Snapdeal",
+    bookmark: [],
     createdAt: new Date("March 27 2021 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
     comments: [],
   },
   /****************************************************************/
@@ -968,24 +378,13 @@ export const posts = [
     content: "Today is the best day of my life, i got my first job.",
     likes: {
       likeCount: 1,
-      likedBy: [
-        {
-          firstName: "Snapdeal",
-          lastName: "",
-          username: "Snapdeal",
-          avatar:
-            "https://pbs.twimg.com/profile_images/774270055555137538/MHkmX_fU_400x400.jpg",
-        },
-      ],
+      likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Amazon",
-    lastName: "India",
     username: "amazonIN",
+    bookmark: [],
     createdAt: new Date("March 16 2021 12:31:25"),
     updatedAt: formatDate(),
-    avatar:
-      "https://pbs.twimg.com/profile_images/1369544638021857281/PtmH2Qj__400x400.jpg",
     comments: [],
   },
 ];
