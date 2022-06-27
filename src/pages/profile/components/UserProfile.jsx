@@ -4,13 +4,12 @@ import { getUserPost } from "../../home/postSlice";
 
 const UserProfile = () => {
   const dispatch = useDispatch();
-  const { user } = useSelector(state => state.auth);
-  const { allUsers } = useSelector(state => state.user);
-  const { allPosts } = useSelector(state => state.post);
+  const { user } = useSelector((state) => state.auth);
+  const { allPosts } = useSelector((state) => state.post);
 
   useEffect(() => {
-    dispatch(getUserPost(user.username))
-  }, [allPosts])
+    dispatch(getUserPost(user.username));
+  }, [allPosts]);
 
   return (
     <div className="bg-slate-100  flex flex-col px-2 py-2 rounded-md  w-full mt-3">
@@ -27,12 +26,8 @@ const UserProfile = () => {
         <button className="mt-5 border rounded-md px-6 py-1 bg-blue-400 text-white active:bg-slate-200 active:text-black cursor-pointer">
           Edit
         </button>
-        <div className="font-semibold text-gray-500 mt-3">
-         {user.bio}
-        </div>
-        <div className="text-sm text-blue-400">
-          {user.website}
-        </div>
+        <div className="font-semibold text-gray-500 mt-3">{user.bio}</div>
+        <div className="text-sm text-blue-400">{user.website}</div>
 
         <div className="font-semibold text-gray-500 mt-3 flex gap-5">
           <span>0 Posts</span>
