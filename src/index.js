@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import { store } from "./app/store";
+import { store } from "./app/Store";
 import { Provider } from "react-redux";
 
 // Call make Server
