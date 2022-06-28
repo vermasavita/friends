@@ -12,7 +12,7 @@ const UserProfile = () => {
   }, [allPosts]);
 
   return (
-    <div className="bg-blue-100  flex flex-col px-2 py-2 rounded-md  w-full mt-3">
+    <div className="bg-white  flex flex-col px-2 py-2 rounded-md  w-full mt-3">
       <div className="flex flex-col items-center">
         <div className="flex justify-between items-center">
           <img

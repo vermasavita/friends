@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { openPostCardModal } from "../../../components/postCardModal/postCardModalSlice";
 
 const SinglePost = ({ post }) => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const [editPost, setEditPost] = useState("");
   const { allUsers } = useSelector((state) => state.user);
   const { user } = useSelector((state) => state.auth);
@@ -14,7 +14,7 @@ const SinglePost = ({ post }) => {
   
   return userInfo ? (
     <div
-      className="bg-blue-50 flex flex-col px-5 py-3 rounded-md shadow w-full mt-3 "
+      className="bg-white flex flex-col px-5 py-3 rounded-md border w-full mt-3 "
       key={post._id}
     >
       <div className="flex cursor-pointer">
@@ -43,8 +43,8 @@ const SinglePost = ({ post }) => {
             >
               <i className="bx bx-dots-vertical-rounded"></i>
               {editPost && (
-                <ul className="rounded-md w-32 bg-white absolute m-0 top-7 right-4 text-sm text-gray-500 flex flex-col p-1">
-                  <li onClick={() => dispatch(openPostCardModal())} className="text-black hover:bg-blue-50 rounded-sm mb-2 p-1 flex gap-2 items-center">
+                <ul className="border rounded-md w-32 bg-white absolute m-0 top-7 right-4 text-sm text-gray-500 flex flex-col p-1">
+                  <li onClick={() => dispatch(openPostCardModal(post))} className="text-black hover:bg-blue-50 rounded-sm mb-2 p-1 flex gap-2 items-center">
                     <i className="bx bxs-edit-alt"></i>
                     <span>Edit</span>
                   </li>
@@ -77,10 +77,10 @@ const SinglePost = ({ post }) => {
           className="h-8 w-8 object-cover rounded-full"
           src={userInfo.avatar}
         />
-        <div className=" border-gray-200 self-center px-2 py-1 ml-3 border-solid border grow flex space-between items-center rounded-md bg-blue-50">
+        <div className=" border-gray-200 self-center px-2 py-1 ml-3 border-solid grow flex space-between items-center rounded-md bg-white border">
           <input
             type="text"
-            className="grow focus:outline-none sm:text-sm bg-blue-50"
+            className="grow focus:outline-none sm:text-sm bg-white"
             placeholder="Add a comment"
           />
           <button className="text-cyan-800">Post</button>

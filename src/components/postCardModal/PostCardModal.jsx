@@ -11,7 +11,7 @@ const PostCardM = () => {
     (state) => state.postCardModal
   );
   const [input, setInput] = useState("");
- console.log(postCardContent)
+
   useEffect(() => {
     if (postCardContent && postCardContent.content) {
       setInput(postCardContent.content);
@@ -19,10 +19,14 @@ const PostCardM = () => {
   }, [postCardContent]);
 
   const postHandler = () => {
-    // postCardContent
-    //   ? dispatch(editPosts({ ...postCardContent, token: token }))
-    //   : 
-      dispatch(createPost({ postData: { content: input }, token: token }));
+    postCardContent
+      ? dispatch(
+          editPosts({
+            postData: {...postCardContent, content: input}, 
+            token: token,
+          })
+        )
+      : dispatch(createPost({ postData: { content: input }, token: token }));
     setInput("");
     dispatch(closePostCardModal());
   };
@@ -36,7 +40,7 @@ const PostCardM = () => {
         <div className="flex items-center justify-between ">
           <h2 className="text-lg">Add Post</h2>
           <button
-            className=" border-blue-400 px-1.5"
+            className=" border-cyan-800 px-1.5"
             onClick={() => {
               dispatch(closePostCardModal());
               setInput("");
@@ -51,7 +55,7 @@ const PostCardM = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         ></textarea>
-        <div className="w-full mt-4 rounded-lg bg-blue-400 text-white">
+        <div className="w-full mt-4 rounded-lg bg-cyan-800 text-white">
           <button
             className={`w-full rounded-lg py-1 ${
               input.length < 1 && "hover: cursor-not-allowed"

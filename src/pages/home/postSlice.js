@@ -38,7 +38,6 @@ export const createPost = createAsyncThunk(
   "post/createPost",
   async ({ postData, token }, thunkAPI) => {
     try {
-      console.log(postData);
       const response = await axios.post(
         "api/posts",
         { postData },
@@ -136,6 +135,17 @@ const postSlice = createSlice({
       state.allPosts = action.payload.data.posts;
     },
     [createPost.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [editPosts.pending]: (state) => {
+      state.status = "pending";
+    },
+    [editPosts.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [editPosts.rejected]: (state, action) => {
       state.status = "rejected";
       console.error(action.payload.data.errors[0]);
     },
