@@ -11,7 +11,7 @@ const SinglePost = ({ post }) => {
 
   return userInfo ? (
     <div
-      className="bg-white flex flex-col px-6 py-4 rounded-md shadow w-full mt-3 "
+      className="bg-blue-50 flex flex-col px-5 py-3 rounded-md shadow w-full mt-3 "
       key={post._id}
     >
       <div className="flex cursor-pointer">
@@ -53,15 +53,14 @@ const SinglePost = ({ post }) => {
         <img
           className="h-8 w-8 object-cover rounded-full"
           src={userInfo.avatar}
-          alt=""
         />
-        <div className=" border-gray-200 self-center px-2 py-1 ml-3 border-solid border grow flex space-between items-center rounded-md ">
+        <div className=" border-gray-200 self-center px-2 py-1 ml-3 border-solid border grow flex space-between items-center rounded-md bg-blue-50">
           <input
             type="text"
-            className="grow focus:outline-none sm:text-sm "
+            className="grow focus:outline-none sm:text-sm bg-blue-50"
             placeholder="Add a comment"
           />
-          <button className="text-blue-400">Post</button>
+          <button className="text-cyan-800">Post</button>
         </div>
       </div>
     </div>
