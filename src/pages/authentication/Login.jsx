@@ -12,8 +12,8 @@ const Login = () => {
   const dispatch = useDispatch();
   const [user, setUser] = useState({ username: "", password: "" });
   const guestCredential = {
-    username: "adarshbalika",
-    password: "adarshBalika123",
+    username: "guestuser",
+    password: "guestuser123",
   };
   const iptHandler = (e) => {
     const { id, value } = e.target;

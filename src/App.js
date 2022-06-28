@@ -1,10 +1,33 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Login, Signup, Bookmark, AllPost, Profile } from "./pages";
+import {
+  Wrapper,
+  Login,
+  Signup,
+  Bookmark,
+  AllPost,
+  Profile,
+  Feed,
+} from "./pages";
 import { ToastContainer } from "react-toastify";
 import { RequireAuth } from "./RequiresAuth";
 import "react-toastify/dist/ReactToastify.css";
+import { PostCardM } from "./components";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getAllPost, getUserPost } from "./pages/home/postSlice";
+import { getUsers } from "./pages/profile/userSlice";
 
 const App = () => {
+  const dispatch = useDispatch();
+  const { token, user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (token) {
+      dispatch(getAllPost());
+      dispatch(getUserPost(user.username));
+      dispatch(getUsers());
+    }
+  }, [token]);
   return (
     <div className="App">
       <ToastContainer
@@ -14,7 +37,7 @@ const App = () => {
         newestOnTop={false}
         closeOnClick
         rtl={false}
-        theme="colored"
+        theme="light"
         pauseOnFocusLoss
         draggable
         pauseOnHover
@@ -27,7 +50,9 @@ const App = () => {
             path="/"
             element={
               <RequireAuth>
-                <Home />
+                <Wrapper>
+                  <Feed />
+                </Wrapper>
               </RequireAuth>
             }
           />
@@ -35,31 +60,33 @@ const App = () => {
             path="/explore"
             element={
               <RequireAuth>
-                <Home>
+                <Wrapper>
                   <AllPost />
-                </Home>
+                </Wrapper>
               </RequireAuth>
             }
           />
+          <Route path="" />
           <Route
             path="/bookmark"
             element={
-              <Home>
+              <Wrapper>
                 <Bookmark />
-              </Home>
+              </Wrapper>
             }
           />
           <Route
             path="/profile"
             element={
               <RequireAuth>
-                <Home>
+                <Wrapper>
                   <Profile />
-                </Home>
+                </Wrapper>
               </RequireAuth>
             }
           />
         </Routes>
+        <PostCardM />
       </Router>
     </div>
   );
