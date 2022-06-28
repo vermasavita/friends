@@ -9,7 +9,7 @@ import { formatDate } from "../utils/authUtils";
 export const posts = [
   {
     _id: uuid(),
-    content: `In India, everyone is a self taught developer. Fact. Not kidding. The education part of college failed all of us.`,
+    content: `Hope the callback was helpful, we will work on making your ordering experiences more pleasant going forward.`,
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -26,7 +26,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `Sometimes, all the therapy you need is talking to friends.`,
+    content: `Hi, helping you out is our priority. Please follow us back so that further information can be shared with you via DM.`,
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -43,7 +43,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `“Usually a good time to invest is when most people are scared of investing.`,
+    content: `Usually a good time to invest is when most people are scared of investing.`,
     likes: {
       likeCount: 3,
       dislikedBy: [],
@@ -60,8 +60,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `Student: Does patience play an important role here?
-	Teacher: Where does it not play, my friend?`,
+    content: `Make your home the better version of itself with Snapdeal's #HomeAndKitchenMela 🥰 `,
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -77,10 +76,8 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `We want everything
-	And that is a disaster
-	Because, we are never going to get everything.
-	And worse, the one thing that we truly want, will remain under-served.`,
+    content: `Maintain a perfect work-life balance by playing your favourite music with the Amazon Prime Membership.
+    Join Prime Now -  https://amazon.in/amazonprime and listen to more than 90 million songs Ad-Free!`,
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -96,7 +93,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `Describe your relationship with JavaScript with one word.`,
+    content: `Describe your relationship with Paytm with one word.`,
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -128,7 +125,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `“"There are no get rich quick schemes. That’s just someone else getting rich off you." - @naval`,
+    content: `It’s TUESDAY!! Guess that’s a good enough reason to order the things on your wishlist! :P`,
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -159,7 +156,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `The Golden State is cooking its golden geese. -@melonmusk`,
+    content: `not all superheros wear capes, some give their detailed reviews on products with pictures.`,
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -175,7 +172,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `Not to mention potential bugs in the code. Open source is the way to go to solve both trust and efficacy.`,
+    content: `Aaj kahana nai milega. Katti`,
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -191,7 +188,8 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `The greatest glory in living lies not in never falling, but in rising every time we fall. -Nelson Mandela`,
+    content: `Celebrate equality this Pride Day with Amazon Pay Gift Cards.
+    https://amzn.to/3A2ViKI`,
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -207,7 +205,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `“Do not pity the dead, Harry. Pity the living, and, above all those who live without love.” - Albus Dumbledore`,
+    content: `Receive money directly in your Bank A/c from anyone, anywhere using #PaytmSeUPI 📲`,
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -223,7 +221,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: `"The larger the herd, the lower the returns." - @naval`,
+    content: `Use Paytm se UPI. Scan any QR and make payments directly from your Bank A/c 📲`,
     likes: {
       likeCount: 3,
       likedBy: [],
@@ -241,7 +239,7 @@ export const posts = [
   {
     _id: uuid(),
     content:
-      "Your social media following doesn’t matter when you can’t deliver the quality of work you promised to your customers or clients.",
+      "What’s better than monsoon essentials that match your style? Nothing! Head to #Snapdeal and shop now 😍",
     likes: {
       likeCount: 4,
       likedBy: [],
@@ -257,7 +255,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: "Today is my best day, how's yours?",
+    content: "Today is my best day, order food from zomato?",
     likes: {
       likeCount: 2,
       likedBy: [],
@@ -327,7 +325,7 @@ export const posts = [
   {
     _id: uuid(),
     content:
-      "I'll rather have pain of discipline than pain of regret. Getting there💪 and anyone reading this believe in yourself and you'll get there eventually.",
+      "Do UPI payment. Make us rich.",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -343,7 +341,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: "Lorem ipsum dolor sit amet.",
+    content: "We sometime flip",
     likes: {
       likeCount: 2,
       likedBy: [],
@@ -359,7 +357,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: "I am very good at writing code, React JS ♥",
+    content: "I am very good at selling no product, React JS ♥",
     likes: {
       likeCount: 3,
       likedBy: [],
@@ -375,7 +373,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    content: "Today is the best day of my life, i got my first job.",
+    content: "Today is the best day of our life, we are selling amazon",
     likes: {
       likeCount: 1,
       likedBy: [],

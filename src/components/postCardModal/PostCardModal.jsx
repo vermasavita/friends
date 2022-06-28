@@ -11,7 +11,7 @@ const PostCardM = () => {
     (state) => state.postCardModal
   );
   const [input, setInput] = useState("");
-
+ console.log(postCardContent)
   useEffect(() => {
     if (postCardContent && postCardContent.content) {
       setInput(postCardContent.content);
@@ -19,7 +19,10 @@ const PostCardM = () => {
   }, [postCardContent]);
 
   const postHandler = () => {
-    dispatch(createPost({ postData: { content: input }, token: token }));
+    // postCardContent
+    //   ? dispatch(editPosts({ ...postCardContent, token: token }))
+    //   : 
+      dispatch(createPost({ postData: { content: input }, token: token }));
     setInput("");
     dispatch(closePostCardModal());
   };
