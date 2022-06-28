@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { openPostCardModal } from "../../../components/postCardModal/postCardModalSlice";
+import { deletePost } from "../postSlice";
 
 const SinglePost = ({ post }) => {
   const dispatch = useDispatch();
   const [editPost, setEditPost] = useState("");
   const { allUsers } = useSelector((state) => state.user);
-  const { user } = useSelector((state) => state.auth);
+  const { user, token } = useSelector((state) => state.auth);
   const userInfo =
     allUsers && allUsers?.find((user) => user.username === post.username);
-
   
   return userInfo ? (
     <div
@@ -48,7 +47,7 @@ const SinglePost = ({ post }) => {
                     <i className="bx bxs-edit-alt"></i>
                     <span>Edit</span>
                   </li>
-                  <li className="text-black hover:bg-blue-50 rounded-sm p-1 flex gap-2 items-center">
+                  <li onClick={() => dispatch(deletePost({post, token}))}className="text-black hover:bg-blue-50 rounded-sm p-1 flex gap-2 items-center">
                     <i className="bx bxs-trash-alt"></i>
                     <span>Delete</span>
                   </li>

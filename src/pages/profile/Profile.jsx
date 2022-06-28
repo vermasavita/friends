@@ -11,7 +11,7 @@ const Profile = () => {
         {userPosts.length > 0 ? (
           userPosts.map((post) => <SinglePost key={post._id} post={post} />)
         ) : (
-          <div>
+          <div className="text-center font-bold text-lg mt-10 text-slate-500">
             <h1>No Post</h1>
           </div>
         )}
