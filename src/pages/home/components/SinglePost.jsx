@@ -39,6 +39,12 @@ const SinglePost = ({ post }) => {
     }
   };
 
+  const getPostDate = (date) => {
+    let postDate = new Date(date);
+    postDate = postDate.toDateString().split(" ").slice(1, 4).join(" ");
+    return postDate.slice(0, 6) + "," + postDate.slice(6);
+  };
+
   return userInfo ? (
     <div
       className="bg-white flex flex-col px-5 py-3 rounded-md border w-full mt-3"
@@ -61,7 +67,7 @@ const SinglePost = ({ post }) => {
               <span className="text-md font-semibold">{`${userInfo.firstName} ${userInfo.lastName}`}</span>
               <span className="text-sm text-gray-500">@{post.username}</span>
             </div>
-            <small className="text-gray-400">2022/2/2 2:00</small>
+            <small className="text-gray-400">{getPostDate(post.createdAt)}</small>
           </div>
           {user.username === post.username && (
             <div
