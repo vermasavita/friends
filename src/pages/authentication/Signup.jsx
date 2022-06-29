@@ -57,12 +57,12 @@ const Signup = () => {
       <div className="w-2/5 sm:max-w-xl mx-auto text-center sm:w-11/12 py-3">
         <div className="mt-4 bg-white shadow-md rounded-lg text-left">
           <div className="h-2 bg-cyan-800 rounded-t-md"></div>
-          <div className="flex flex-col justify-center py-5 gap-2 items-center">
+          <div className="flex flex-col justify-center py-2 gap-2 items-center">
             <p className="text-cyan-800 title text-3xl font-bold font-serif">
               Make Friends
             </p>
           </div>
-          <div className="px-5 py-4 pb-7 sm:px-6">
+          <div className="px-5 py-2 pb-7 sm:px-6">
             <h2 className="text-2xl flex justify-center font-semibold border-b-2 border-cyan-800 pb-2 sm:text-xl">
               Sign Up
             </h2>

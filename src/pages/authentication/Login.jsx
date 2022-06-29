@@ -1,4 +1,3 @@
-import logo from "../../Assets/Friends.png";
 import { NavLink } from "react-router-dom";
 import "./Auth.css";
 import { useState } from "react";
@@ -42,12 +41,12 @@ const Login = () => {
       <div className="w-2/5 py-3 sm:max-w-xl sm:w-10/12 mx-auto text-center md:border md:w-96">
         <div className="mt-4 bg-white shadow-md rounded-lg text-left">
           <div className="h-2 bg-cyan-800 rounded-t-md"></div>
-          <div className="flex justify-center py-5 gap-4 items-center">
+          <div className="flex justify-center py-2 gap-4 items-center">
             <p className="text-cyan-800 title text-3xl font-bold font-serif">
               Make Friends
             </p>
           </div>
-          <div className="px-12 py-4 pb-8 sm:px-6">
+          <div className="px-5 py-2 pb-7 sm:px-6">
             <h2 className="text-2xl flex justify-center font-semibold border-b-2 border-cyan-800 pb-2 sm:text-xl">
               Sign In
             </h2>
