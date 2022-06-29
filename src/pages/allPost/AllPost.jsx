@@ -5,13 +5,13 @@ const AllPost = () => {
 
   return (
     <div className="w-4/5 xl:w-full px-1">
-      {/* <div className="flex flex-col">
+      <div className="flex flex-col">
         {allPosts.length !== 0 ? (
-          allPosts.map((post) => <SinglePost key={post._id} post={post} />)
+          [...allPosts].reverse().map((post) => <SinglePost key={post._id} post={post} />)
         ) : (
           <></>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };
