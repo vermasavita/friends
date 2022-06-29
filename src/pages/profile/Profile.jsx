@@ -1,6 +1,7 @@
 import { SinglePost } from "../home/components/SinglePost";
 import { UserProfile } from "./components/UserProfile";
 import { useSelector } from "react-redux";
+
 const Profile = () => {
   const { userPosts } = useSelector((state) => state.post);
 

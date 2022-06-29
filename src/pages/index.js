@@ -5,3 +5,4 @@ export { Bookmark } from "./bookmark/Bookmark";
 export { AllPost } from "./allPost/AllPost";
 export { Profile } from "./profile/Profile";
 export { Feed } from "./Feed/Feed";
+export { EditProfileModal } from "./profile/components/EditProfileModal"

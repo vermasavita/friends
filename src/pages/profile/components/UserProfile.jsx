@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPost } from "../../home/postSlice";
-
+import { openEditProfileModal } from "../profileModalSlice";
+import "../../../components/postCardModal/postCardModal.css";
 const UserProfile = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -23,7 +24,7 @@ const UserProfile = () => {
 
         <span className="text-lg font-semibold mt-2">{`${user.firstName} ${user.lastName}`}</span>
         <span className="text-sm text-gray-500">@{user.username}</span>
-        <button className="mt-5 border rounded-md px-6 py-1 bg-cyan-800 text-white active:bg-slate-200 active:text-black cursor-pointer">
+        <button onClick={() => dispatch(openEditProfileModal())} className="mt-5 border rounded-md px-6 py-1 bg-cyan-800 text-white active:bg-slate-200 active:text-black cursor-pointer">
           Edit
         </button>
         <div className="font-semibold text-gray-500 mt-3">{user.bio}</div>
