@@ -9,7 +9,9 @@ const Profile = () => {
       <div className="w-full">
         <UserProfile />
         {userPosts.length > 0 ? (
-          userPosts.map((post) => <SinglePost key={post._id} post={post} />)
+          [...userPosts]
+            .reverse()
+            .map((post) => <SinglePost key={post._id} post={post} />)
         ) : (
           <div className="text-center font-bold text-lg mt-10 text-slate-500">
             <h1>No Post</h1>
