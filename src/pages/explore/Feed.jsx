@@ -1,10 +1,7 @@
 import { SinglePost } from "../home/components/SinglePost";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllPost, getUserPost } from "../home/postSlice";
+import { useSelector } from "react-redux";
 const Feed = () => {
-  const dispatch = useDispatch();
   const { allPosts } = useSelector((state) => state.post);
- 
 
   return (
     <div className="w-4/5 xl:w-full px-1">

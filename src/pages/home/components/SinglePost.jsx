@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { openPostCardModal } from "../../../components/postCardModal/postCardModalSlice";
-import { deletePost, dislikePost, likePost } from "../postSlice";
+import {
+  bookmarkPost,
+  deletePost,
+  dislikePost,
+  likePost,
+  removeBookmarkPost,
+} from "../postSlice";
 
 const SinglePost = ({ post }) => {
   const dispatch = useDispatch();
@@ -10,7 +16,12 @@ const SinglePost = ({ post }) => {
   const { user, token } = useSelector((state) => state.auth);
   const userInfo =
     allUsers && allUsers?.find((user) => user.username === post.username);
+
   const isLiked = post.likes.likedBy.some(
+    (item) => item.username === user.username
+  );
+
+  const isBookMarked = post.bookmark?.some(
     (item) => item.username === user.username
   );
 
@@ -20,9 +31,17 @@ const SinglePost = ({ post }) => {
       : dispatch(likePost({ postId: post._id, token: token }));
   };
 
+  const bookmarkHandler = () => {
+    if (isBookMarked) {
+      dispatch(removeBookmarkPost({ postId: post._id, token: token }));
+    } else {
+      dispatch(bookmarkPost({ postId: post._id, token: token }));
+    }
+  };
+
   return userInfo ? (
     <div
-      className="bg-white flex flex-col px-5 py-3 rounded-md border w-full mt-3 "
+      className="bg-white flex flex-col px-5 py-3 rounded-md border w-full mt-3"
       key={post._id}
     >
       <div className="flex cursor-pointer">
@@ -81,12 +100,24 @@ const SinglePost = ({ post }) => {
             className="flex items-center gap-1"
             onClick={() => likePostHandler()}
           >
-            <i className={`${isLiked ? "bx bxs-heart": "bx bx-heart"} text-base`}></i>
-            <span>{post.likes.likeCount === 0? "": post.likes.likeCount}</span>
+            <i
+              className={`${
+                isLiked ? "bx bxs-heart" : "bx bx-heart"
+              } text-base`}
+            ></i>
+            <span>
+              {post.likes.likeCount === 0 ? "" : post.likes.likeCount}
+            </span>
           </span>
-          <span className="flex items-center gap-1">
-            <i className="bx bx-bookmark"></i>
-            Bookmark
+          <span
+            onClick={() => bookmarkHandler()}
+            className="flex items-center gap-1"
+          >
+            <i
+              className={`${
+                isBookMarked ? "bx bxs-bookmark-star" : "bx bx-bookmark"
+              } text-base`}
+            ></i>
           </span>
         </div>
       </div>
