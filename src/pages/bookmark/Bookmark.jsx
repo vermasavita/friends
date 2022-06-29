@@ -16,7 +16,7 @@ const Bookmark = () => {
   }, [allPosts]);
 
   return (
-    <div className="w-4/5 xl:w-full px-1 h-full">
+    <div className="w-full xl:w-full px-1 h-full">
       {bookmark.length > 0 ? (
         bookmark.map((post) => <SinglePost key={post._id} post={post} />)
       ) : (
