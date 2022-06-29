@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { openPostCardModal } from "../../../components/postCardModal/postCardModalSlice";
-import { deletePost } from "../postSlice";
+import { deletePost, dislikePost, likePost } from "../postSlice";
 
 const SinglePost = ({ post }) => {
   const dispatch = useDispatch();
@@ -10,7 +10,16 @@ const SinglePost = ({ post }) => {
   const { user, token } = useSelector((state) => state.auth);
   const userInfo =
     allUsers && allUsers?.find((user) => user.username === post.username);
-  
+  const isLiked = post.likes.likedBy.some(
+    (item) => item.username === user.username
+  );
+
+  const likePostHandler = () => {
+    isLiked
+      ? dispatch(dislikePost({ postId: post._id, token: token }))
+      : dispatch(likePost({ postId: post._id, token: token }));
+  };
+
   return userInfo ? (
     <div
       className="bg-white flex flex-col px-5 py-3 rounded-md border w-full mt-3 "
@@ -43,11 +52,17 @@ const SinglePost = ({ post }) => {
               <i className="bx bx-dots-vertical-rounded"></i>
               {editPost && (
                 <ul className="border rounded-md w-32 bg-white absolute m-0 top-7 right-4 text-sm text-gray-500 flex flex-col p-1">
-                  <li onClick={() => dispatch(openPostCardModal(post))} className="text-black hover:bg-blue-50 rounded-sm mb-2 p-1 flex gap-2 items-center">
+                  <li
+                    onClick={() => dispatch(openPostCardModal(post))}
+                    className="text-black hover:bg-blue-50 rounded-sm mb-2 p-1 flex gap-2 items-center"
+                  >
                     <i className="bx bxs-edit-alt"></i>
                     <span>Edit</span>
                   </li>
-                  <li onClick={() => dispatch(deletePost({post, token}))}className="text-black hover:bg-blue-50 rounded-sm p-1 flex gap-2 items-center">
+                  <li
+                    onClick={() => dispatch(deletePost({ post, token }))}
+                    className="text-black hover:bg-blue-50 rounded-sm p-1 flex gap-2 items-center"
+                  >
                     <i className="bx bxs-trash-alt"></i>
                     <span>Delete</span>
                   </li>
@@ -62,8 +77,12 @@ const SinglePost = ({ post }) => {
           <p className="text-gray-600 break-all">{post.content}</p>
         </div>
         <div className=" text-gray-600 flex gap-4 mt-4 cursor-pointer text-sm ">
-          <span className="flex items-center gap-1">
-            <i className="bx bx-heart text-base"></i>
+          <span
+            className="flex items-center gap-1"
+            onClick={() => likePostHandler()}
+          >
+            <i className={`${isLiked ? "bx bxs-heart": "bx bx-heart"} text-base`}></i>
+            <span>{post.likes.likeCount === 0? "": post.likes.likeCount}</span>
           </span>
           <span className="flex items-center gap-1">
             <i className="bx bx-bookmark"></i>
