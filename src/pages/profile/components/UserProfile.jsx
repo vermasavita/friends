@@ -12,7 +12,7 @@ const UserProfile = () => {
   }, [allPosts]);
 
   return (
-    <div className="bg-slate-100  flex flex-col px-2 py-2 rounded-md  w-full mt-3">
+    <div className="bg-white  flex flex-col px-2 py-2 rounded-md  w-full mt-3">
       <div className="flex flex-col items-center">
         <div className="flex justify-between items-center">
           <img
@@ -23,11 +23,11 @@ const UserProfile = () => {
 
         <span className="text-lg font-semibold mt-2">{`${user.firstName} ${user.lastName}`}</span>
         <span className="text-sm text-gray-500">@{user.username}</span>
-        <button className="mt-5 border rounded-md px-6 py-1 bg-blue-400 text-white active:bg-slate-200 active:text-black cursor-pointer">
+        <button className="mt-5 border rounded-md px-6 py-1 bg-cyan-800 text-white active:bg-slate-200 active:text-black cursor-pointer">
           Edit
         </button>
         <div className="font-semibold text-gray-500 mt-3">{user.bio}</div>
-        <div className="text-sm text-blue-400">{user.website}</div>
+        <div className="text-sm text-blue-600">{user.website}</div>
 
         <div className="font-semibold text-gray-500 mt-3 flex gap-5">
           <span>0 Posts</span>

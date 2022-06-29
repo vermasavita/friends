@@ -38,7 +38,6 @@ export const createPost = createAsyncThunk(
   "post/createPost",
   async ({ postData, token }, thunkAPI) => {
     try {
-      console.log(postData);
       const response = await axios.post(
         "api/posts",
         { postData },
@@ -95,6 +94,94 @@ export const editPosts = createAsyncThunk(
   }
 );
 
+export const likePost = createAsyncThunk(
+  "post/likePost",
+  async ({ postId, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `/api/posts/like/${postId}`,
+        {},
+        {
+          headers: { authorization: token },
+        }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
+
+export const dislikePost = createAsyncThunk(
+  "post/dislikePost",
+  async ({ postId, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `/api/posts/dislike/${postId}`,
+        {},
+        {
+          headers: { authorization: token },
+        }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
+
+export const bookmarkPost = createAsyncThunk(
+  "post/bookmarkPost",
+  async ({ postId, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `api/users/bookmark/${postId}`,
+        {},
+        {
+          headers: { authorization: token },
+        }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
+
+export const removeBookmarkPost = createAsyncThunk(
+  "post/removeBookmarkPost",
+  async ({ postId, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `/api/users/remove-bookmark/${postId}`,
+        {},
+        {
+          headers: { authorization: token },
+        }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
+
 const initialState = {
   allPosts: [],
   userPosts: [],
@@ -136,6 +223,72 @@ const postSlice = createSlice({
       state.allPosts = action.payload.data.posts;
     },
     [createPost.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [editPosts.pending]: (state) => {
+      state.status = "pending";
+    },
+    [editPosts.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [editPosts.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [deletePost.pending]: (state) => {
+      state.status = "pending";
+    },
+    [deletePost.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [deletePost.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [likePost.pending]: (state) => {
+      state.status = "pending";
+    },
+    [likePost.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [likePost.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [dislikePost.pending]: (state) => {
+      state.status = "pending";
+    },
+    [dislikePost.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [dislikePost.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [bookmarkPost.pending]: (state) => {
+      state.status = "pending";
+    },
+    [bookmarkPost.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [bookmarkPost.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [removeBookmarkPost.pending]: (state) => {
+      state.status = "pending";
+    },
+    [removeBookmarkPost.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [removeBookmarkPost.rejected]: (state, action) => {
       state.status = "rejected";
       console.error(action.payload.data.errors[0]);
     },
