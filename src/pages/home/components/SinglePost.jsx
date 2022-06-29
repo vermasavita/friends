@@ -124,7 +124,7 @@ const SinglePost = ({ post }) => {
       <div className="flex">
         <img
           className="h-8 w-8 object-cover rounded-full"
-          src={userInfo.avatar}
+          src={user.avatar}
         />
         <div className=" border-gray-200 self-center px-2 py-1 ml-3 border-solid grow flex space-between items-center rounded-md bg-white border">
           <input

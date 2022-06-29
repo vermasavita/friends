@@ -173,7 +173,7 @@ export const removeBookmarkPost = createAsyncThunk(
       );
       const data = { data: response.data, status: response.status };
       return data;
-    } catch (response) {
+    } catch (error) {
       return thunkAPI.rejectWithValue({
         data: error.response.data,
         status: error.response.status,
