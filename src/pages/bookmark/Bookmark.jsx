@@ -21,6 +21,7 @@ const Bookmark = () => {
         bookmark.map((post) => <SinglePost key={post._id} post={post} />)
       ) : (
         <div className="text-center font-bold text-lg mt-3 text-slate-500">
+          <img src="" alt="" />
           <h1>No Bookmarks</h1>
         </div>
       )}
