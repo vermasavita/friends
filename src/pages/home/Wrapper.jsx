@@ -8,7 +8,7 @@ const Wrapper = ({children}) => {
         <Search />
         <div className="flex justify-center">{children}</div>
       </div>
-      <Follow />
+      {/* <Follow /> */}
     </div>
   );
 };

@@ -12,10 +12,10 @@ import {
 const SinglePost = ({ post }) => {
   const dispatch = useDispatch();
   const [editPost, setEditPost] = useState("");
-  const { allUsers } = useSelector((state) => state.user);
+  const { allUsers, authUser } = useSelector((state) => state.user);
   const { user, token } = useSelector((state) => state.auth);
   const userInfo =
-    allUsers && allUsers?.find((user) => user.username === post.username);
+    allUsers && allUsers?.find((user) => authUser.username === post.username);
 
   const isLiked = post.likes.likedBy.some(
     (item) => item.username === user.username
