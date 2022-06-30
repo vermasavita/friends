@@ -13,6 +13,8 @@ export const users = [
     lastName: "User",
     username: "guestuser",
     password: "guestuser123",
+    followers: [],
+    following: [],
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:
@@ -43,6 +45,8 @@ export const users = [
     lastName: "Care",
     username: "paytmcare",
     password: "paytmcare123",
+    followers: [],
+    following: [],
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:
@@ -57,6 +61,8 @@ export const users = [
     lastName: "India",
     username: "amazonIN",
     password: "amazonIN123",
+    followers: [],
+    following: [],
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:
@@ -71,6 +77,8 @@ export const users = [
     lastName: "",
     username: "Snapdeal",
     password: "snapdeal123",
+    followers: [],
+    following: [],
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:
@@ -84,6 +92,8 @@ export const users = [
     lastName: "",
     username: "flipkart",
     password: "flipkart123",
+    followers: [],
+    following: [],
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:

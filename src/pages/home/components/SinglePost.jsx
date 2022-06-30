@@ -15,7 +15,7 @@ const SinglePost = ({ post }) => {
   const { allUsers, authUser } = useSelector((state) => state.user);
   const { user, token } = useSelector((state) => state.auth);
   const userInfo =
-    allUsers && allUsers?.find((user) => authUser.username === post.username);
+    allUsers && allUsers?.find((user) => user.username === post.username);
 
   const isLiked = post.likes.likedBy.some(
     (item) => item.username === user.username
@@ -64,10 +64,16 @@ const SinglePost = ({ post }) => {
         <div className="flex justify-between mx-1 px-1 w-full items-center">
           <div className="flex flex-col">
             <div className="flex gap-2 items-center">
-              <span className="text-md font-semibold">{`${userInfo.firstName} ${userInfo.lastName}`}</span>
+              <span className="text-md font-semibold">
+                {user.username === post.username
+                  ? `${authUser.firstName} ${authUser.lastName}`
+                  : post.name}
+              </span>
               <span className="text-sm text-gray-500">@{post.username}</span>
             </div>
-            <small className="text-gray-400">{getPostDate(post.createdAt)}</small>
+            <small className="text-gray-400">
+              {getPostDate(post.createdAt)}
+            </small>
           </div>
           {user.username === post.username && (
             <div
@@ -128,10 +134,7 @@ const SinglePost = ({ post }) => {
         </div>
       </div>
       <div className="flex">
-        <img
-          className="h-8 w-8 object-cover rounded-full"
-          src={user.avatar}
-        />
+        <img className="h-8 w-8 object-cover rounded-full" src={user.avatar} />
         <div className=" border-gray-200 self-center px-2 py-1 ml-3 border-solid grow flex space-between items-center rounded-md bg-white border">
           <input
             type="text"

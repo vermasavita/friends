@@ -30,7 +30,7 @@ const Feed = () => {
   };
 
   return (
-    <div className="bg-white flex w-6/6 ll xl:w-full h-13 flex-col">
+    <div className="bg-white flex w-full xl:w-full h-13 flex-col">
       <div className="rounded-md shadow flex justify-between items-center  bg-white">
         <div className="w-1/2">
           <button

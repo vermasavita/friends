@@ -4,11 +4,18 @@ import { getUserPost } from "../../home/postSlice";
 import { openEditProfileModal } from "../profileModalSlice";
 import "../../../components/postCardModal/postCardModal.css";
 import { getUserHandler } from "../userSlice";
+import { openFollowingModal } from "../../../components/followBar/followModalSlice";
+
 const UserProfile = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const { authUser } = useSelector((state) => state.user);
   const { allPosts } = useSelector((state) => state.post);
+  const userPost = allPosts.filter(
+    (post) => post.username === authUser.username
+  );
+
+  
 
   useEffect(() => {
     dispatch(getUserPost(user.username));
@@ -43,9 +50,9 @@ const UserProfile = () => {
         <div className="text-sm text-blue-600">{authUser.website}</div>
 
         <div className="font-semibold text-gray-500 mt-3 flex gap-5">
-          <span>0 Posts</span>
-          <span>{authUser.followers} Followers</span>
-          <span>{authUser.following} Following</span>
+          <span>{userPost.length} Posts</span>
+          <span>{user.followers.length} Followers</span>
+          <span onClick={() => dispatch(openFollowingModal())}>{user?.following.length} Following</span>
         </div>
       </div>
     </div>

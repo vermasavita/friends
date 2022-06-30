@@ -21,6 +21,30 @@ const EditProfileModal = () => {
     toast.success("Profile Updated!");
   };
 
+  const updateImageHandler = async (image) => {
+    try {
+      const data = new FormData();
+      data.append("file", image);
+      data.append("upload_preset", "pfsqnxae");
+      const request = {
+        method: "POST",
+        body: "data",
+      };
+      await fetch(
+        "https://api.cloudinary.com/v1_1/depmzczni/image/upload",
+        request
+      )
+        .then((response) => response.json())
+        .then((json) => {
+          setUpdateUserData({ ...updateUserData, avatar: json.url });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div
       className={`container fixed justify-center items-center ${
@@ -44,10 +68,16 @@ const EditProfileModal = () => {
             <div className="gap-2 text-slate-500 text-lg">Avatar</div>
             <div className="w-9/12 relative">
               <img
-                src={updateUserData.avatar}
+                src={updateUserData?.avatar}
                 className="h-12 w-12 object-cover rounded-full sm:h-10 sm:w-11"
               />
               <i className="text-slate-800 bx bxs-camera absolute top-7 left-7 text-lg cursor-pointer"></i>
+              <input
+                type="file"
+                className="absolute opacity-0 w-8  top-7 left-7 cursor-pointer"
+                accept="image/jpeg, image/png, image/svg+xml, image/jpg, image/webp image/apng, image/avif, image/gif,"
+                onChange={(e) => updateImageHandler(e.target.files[0])}
+              />
             </div>
           </div>
           <div className="flex justify-between gap-4 mb-3">
@@ -55,7 +85,10 @@ const EditProfileModal = () => {
             <input
               value={updateUserData.firstName}
               onChange={(e) =>
-                setUpdateUserData({ ...updateUserData, firstName: e.target.value })
+                setUpdateUserData({
+                  ...updateUserData,
+                  firstName: e.target.value,
+                })
               }
               className="border focus:outline-none py-2 px-3 w-9/12 rounded-md text-sm"
             />
@@ -65,7 +98,10 @@ const EditProfileModal = () => {
             <input
               value={updateUserData.lastName}
               onChange={(e) =>
-                setUpdateUserData({ ...updateUserData, lastName: e.target.value })
+                setUpdateUserData({
+                  ...updateUserData,
+                  lastName: e.target.value,
+                })
               }
               className="border focus:outline-none py-2 px-3 w-9/12 rounded-md text-sm"
             />
@@ -75,7 +111,10 @@ const EditProfileModal = () => {
             <input
               value={updateUserData.website}
               onChange={(e) =>
-                setUpdateUserData({ ...updateUserData, website: e.target.value })
+                setUpdateUserData({
+                  ...updateUserData,
+                  website: e.target.value,
+                })
               }
               className="border focus:outline-none py-2 px-3 w-9/12 rounded-md text-sm"
             />

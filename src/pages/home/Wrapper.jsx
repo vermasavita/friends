@@ -1,6 +1,7 @@
+import { useSelector } from "react-redux";
 import { Follow, Search, Sidebar } from "../../components";
 
-const Wrapper = ({children}) => {
+const Wrapper = ({ children }) => {
   return (
     <div className="flex bg-white min-h-screen md:w-full justify-center relative">
       <Sidebar />
@@ -8,7 +9,7 @@ const Wrapper = ({children}) => {
         <Search />
         <div className="flex justify-center">{children}</div>
       </div>
-      {/* <Follow /> */}
+      <Follow />
     </div>
   );
 };
