@@ -16,7 +16,6 @@ const Feed = () => {
     setTimeout(() => dispatch(closeLoader(), 1000))
   },[])
 
-  console.log(loader)
   const [trendingPost, setTrendingPost] = useState({
     posts: [],
     isTrending: false,
