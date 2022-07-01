@@ -304,6 +304,10 @@ export const posts = [
       {
         _id: uuid(),
         username: "SwiggyCares",
+        firstName: "Swiggy",
+        lastName: "Cares",
+        avatar:
+        "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
         text: "Live users are awesome",
         votes: {
           upvotedBy: [],
@@ -313,6 +317,10 @@ export const posts = [
       {
         _id: uuid(),
         username: "paytmcare",
+        firstName: "Paytm",
+        lastName: "Care",
+        avatar:
+          "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
         text: "yes you are right!",
         votes: {
           upvotedBy: [],

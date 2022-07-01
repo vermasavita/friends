@@ -213,7 +213,7 @@ export const deleteComment = createAsyncThunk(
       );
       const data = { data: response.data, status: response.status };
       return data;
-    } catch (response) {
+    } catch (error) {
       return thunkAPI.rejectWithValue({
         data: error.response.data,
         status: error.response.status,
@@ -222,6 +222,27 @@ export const deleteComment = createAsyncThunk(
   }
 );
 
+export const editComment = createAsyncThunk(
+  "post/editComment",
+  async ({ postId, commentId, commentData, token }, thunkAPI) => {
+    console.log(postId, commentId, commentData, token)
+    try {
+      const response = await axios.post(
+        `/api/comments/edit/${postId}/${commentId}`,
+        { commentData },
+        { headers: { authorization: token } }
+      );
+      console.log(response)
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
 const initialState = {
   allPosts: [],
   userPosts: [],
@@ -351,6 +372,17 @@ const postSlice = createSlice({
       state.allPosts = action.payload.data.posts;
     },
     [deleteComment.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [editComment.pending]: (state) => {
+      state.status = "pending";
+    },
+    [editComment.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [editComment.rejected]: (state, action) => {
       state.status = "rejected";
       console.error(action.payload.data.errors[0]);
     },
