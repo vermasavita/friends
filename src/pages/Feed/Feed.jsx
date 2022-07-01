@@ -4,11 +4,18 @@ import { useState } from "react";
 import { openLoader, closeLoader } from "../profile/profileModalSlice";
 import { Loader } from "../../components";
 import { useEffect } from "react";
+import { getUserHandler } from "../profile/userSlice";
 
 const Feed = () => {
   const { allPosts } = useSelector((state) => state.post);
   const { user } = useSelector((state) => state.auth);
   const { loader } = useSelector(state => state.profileModal);
+  const [ feedPost, setFeedPost ] = useState([]);
+  const [trendingPost, setTrendingPost] = useState({
+    posts: [],
+    isTrending: false,
+  });
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,21 +23,24 @@ const Feed = () => {
     setTimeout(() => dispatch(closeLoader(), 1000))
   },[])
 
-  const [trendingPost, setTrendingPost] = useState({
-    posts: [],
-    isTrending: false,
-  });
+  useEffect(() => {
+    if(allPosts) {
+      setFeedPost(allPosts
+        .filter((item) => item?.username === user?.username || user?.following?.find(itemTwo => itemTwo?.username === item?.username))
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)))
+    }
+  }, [user, allPosts]);
 
-  const feed = allPosts
-    .filter((item) => item.username === user.username)
-    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  useEffect(() => {
+    dispatch(getUserHandler(user._id))
+  },[allPosts])
 
   const trendingHandler = () => {
     dispatch(openLoader());
     setTrendingPost((prev) => ({ ...prev, isTrending: true }));
     setTrendingPost((prev) => ({
       ...prev,
-      posts: [...feed]
+      posts: [...feedPost]
         .sort((a, b) => b.likes.likeCount - a.likes.likeCount)
         .filter((post) => post.likes.likeCount > 0),
     }));
@@ -77,8 +87,8 @@ const Feed = () => {
             </div>
           ) : (
             <div className="flex flex-col">
-              {feed.length > 0 ? (
-                feed.map((post) => <SinglePost key={post._id} post={post} />)
+              {feedPost.length > 0 ? (
+                feedPost.map((post) => <SinglePost key={post._id} post={post} />)
               ) : (
                 <div>No trending</div>
               )}
