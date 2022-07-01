@@ -1,13 +1,10 @@
-.title {
-  color: rgb(21 94 117);
-}
 
 .search {
   z-index: 1;
 }
 
 @media screen and (max-width: 767px) {
-  .home {
+  .width {
     width: 90vw !important;
   }
   .sidebar {

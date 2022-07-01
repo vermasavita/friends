@@ -37,17 +37,17 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full h-screen px-4 py-6 sm:px-0 flex flex-col justify-center bg-white">
-      <div className="w-2/5 py-3 sm:max-w-xl sm:w-10/12 mx-auto text-center md:w-96">
-        <div className="mt-4 bg-white shadow-md rounded-lg text-left">
-          <div className="h-2 bg-cyan-800 rounded-t-md"></div>
+    <div className="w-full h-screen px-4 py-6 sm:px-0 flex flex-col justify-center bg-sky-100">
+      <div className="w-2/5 py-3 sm:max-w-xl sm:w-10/12 mx-auto text-center md:w-96 flex justify-center">
+        <div className="mt-4 bg-white w-3/4 shadow-md rounded-lg text-left">
+          <div className="h-2 bg-rose-600 rounded-t-md"></div>
           <div className="flex justify-center py-2 gap-4 items-center">
-            <p className="text-cyan-800 title text-3xl font-bold font-serif">
+            <p className="text-rose-600 title text-3xl font-bold font-serif">
               Make Friends
             </p>
           </div>
           <div className="px-5 py-2 pb-7 sm:px-6">
-            <h2 className="text-2xl flex justify-center font-semibold border-b-2 border-cyan-800 pb-2 sm:text-xl">
+            <h2 className="text-2xl flex justify-center font-semibold border-b-2 border-rose-600 pb-2 sm:text-xl">
               Sign In
             </h2>
             <div className="pt-8">
@@ -77,13 +77,13 @@ const Login = () => {
 
             <div className="mt-5">
               <button
-                className="font-semibold w-full mt-5 mb-3 bg-cyan-800 text-white px-7 rounded-lg hover:bg-slate-800 hover:text-white  py-2"
+                className="font-semibold w-full mt-5 mb-3 bg-rose-600 text-white px-7 rounded-lg hover:bg-slate-300 hover:text-black  py-2"
                 onClick={guestIptHandler}
               >
                 Add Guest Credential
               </button>
               <button
-                className="font-semibold w-full mb-4 bg-cyan-800 text-white px-7 rounded-lg hover:bg-slate-800 hover:text-white py-2"
+                className="font-semibold w-full mb-4 bg-rose-600 text-white px-7 rounded-lg hover:bg-slate-300 hover:text-black py-2"
                 onClick={loginHandler}
               >
                 Sign In

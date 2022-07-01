@@ -56,20 +56,20 @@ const Feed = () => {
       {loader ? (
         <Loader />
       ) : (
-        <div className="bg-white flex w-full xl:w-full h-13 flex-col">
-          <div className="rounded-md shadow flex justify-between items-center  bg-white">
-            <div className="w-1/2">
+        <div className="bg-sky-100 feed-width flex w-5/6 xl:w-full h-13 flex-col ">
+          <div className="rounded-md flex justify-between items-center gap-1 bg-sky-100">
+            <div className="w-1/2 shadow rounded-md bg-white">
               <button
                 onClick={() => trendingHandler()}
-                className="border w-full px-4 py-2 cursor-pointer hover:opacity-50"
+                className="border rounded-md w-full px-4 py-2 cursor-pointer hover:opacity-50"
               >
                 Trending
               </button>
             </div>
-            <div className="w-1/2">
+            <div className="w-1/2 shadow rounded-md bg-white">
               <button
                 onClick={() => latestPostHandler()}
-                className="border w-full px-4 py-2 cursor-pointer hover:opacity-50"
+                className="border w-full px-4 py-2 rounded-md cursor-pointer hover:opacity-50"
               >
                 Latest
               </button>
@@ -90,7 +90,7 @@ const Feed = () => {
               {feedPost.length > 0 ? (
                 feedPost.map((post) => <SinglePost key={post._id} post={post} />)
               ) : (
-                <div>No trending</div>
+                <div className="text-center font-bold text-lg mt-5 text-slate-500">No trending</div>
               )}
             </div>
           )}

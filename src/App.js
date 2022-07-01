@@ -7,7 +7,7 @@ import {
   AllPost,
   Profile,
   Feed,
-  EditProfileModal
+  EditProfileModal,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import { RequireAuth } from "./RequiresAuth";
@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllPost, getUserPost } from "./pages/home/postSlice";
 import { getUsers } from "./pages/profile/userSlice";
+import { AnyProfile } from "./pages/profile/AnyProfile";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -87,9 +88,10 @@ const App = () => {
             }
           />
         </Routes>
+
         <PostCardM />
-        <EditProfileModal/>
-        <FollowingModal/>
+        <EditProfileModal />
+        <FollowingModal />
       </Router>
     </div>
   );

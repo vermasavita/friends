@@ -53,9 +53,9 @@ const EditProfileModal = () => {
     >
       <div className="w-1/3 bg-white p-3 flex flex-col rounded-lg sm:w-full md:w-3/4">
         <div className="flex items-center justify-between ">
-          <h2 className="text-lg">Edit Profile</h2>
+          <h2 className="text-lg md:text-md">Edit Profile</h2>
           <button
-            className=" border-cyan-800 px-1.5"
+            className=" border-rose-600 px-1.5"
             onClick={() => {
               dispatch(closeEditProfileModal());
             }}
@@ -65,7 +65,7 @@ const EditProfileModal = () => {
         </div>
         <div className="flex flex-col mt-3">
           <div className="flex justify-between gap-4 mb-3">
-            <div className="gap-2 text-slate-500 text-lg">Avatar</div>
+            <div className="gap-2 text-slate-500 text-lg md:text-md">Avatar</div>
             <div className="w-9/12 relative">
               <img
                 src={updateUserData?.avatar}
@@ -81,7 +81,7 @@ const EditProfileModal = () => {
             </div>
           </div>
           <div className="flex justify-between gap-4 mb-3">
-            <div className="gap-2 text-slate-500 text-lg">FirstName</div>
+            <div className="gap-2 text-slate-500 text-lg md:text-md">FirstName</div>
             <input
               value={updateUserData.firstName}
               onChange={(e) =>
@@ -94,7 +94,7 @@ const EditProfileModal = () => {
             />
           </div>
           <div className="flex justify-between gap-4 mb-3">
-            <div className="gap-2 text-slate-500 text-lg">LastName</div>
+            <div className="gap-2 text-slate-500 text-lg md:text-md">LastName</div>
             <input
               value={updateUserData.lastName}
               onChange={(e) =>
@@ -107,7 +107,7 @@ const EditProfileModal = () => {
             />
           </div>
           <div className="flex justify-between gap-4 mb-3">
-            <div className="gap-2 text-slate-500 text-lg">Website</div>
+            <div className="gap-2 text-slate-500 text-lg md:text-md">Website</div>
             <input
               value={updateUserData.website}
               onChange={(e) =>
@@ -120,7 +120,7 @@ const EditProfileModal = () => {
             />
           </div>
           <div className="flex justify-between gap-4 mb-3">
-            <div className="gap-2 text-slate-500 text-lg">Bio</div>
+            <div className="gap-2 text-slate-500 text-lg md:text-md">Bio</div>
             <input
               value={updateUserData.bio}
               onChange={(e) =>
@@ -132,7 +132,7 @@ const EditProfileModal = () => {
           <div className="flex justify-end">
             <button
               className={
-                "bg-cyan-800 p-2 px-6 w-fit rounded-md text-white cursor-pointer"
+                "bg-rose-600 p-2 px-6 w-fit rounded-md text-white cursor-pointer"
               }
               onClick={() => updateUserInforHandler()}
             >

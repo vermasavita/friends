@@ -49,7 +49,7 @@ const SinglePost = ({ post }) => {
 
   return userInfo ? (
     <div
-      className="bg-white flex flex-col px-5 py-3 rounded-md border w-full mt-3"
+      className="bg-white flex flex-col px-3 py-4 pb-0 rounded-md border w-full mt-3 shadow"
       key={post._id}
     >
       <div className="flex cursor-pointer">
@@ -63,7 +63,7 @@ const SinglePost = ({ post }) => {
             className="h-11 w-12 object-cover rounded-full sm:h-10 sm:w-11"
           />
         </div>
-        <div className="flex justify-between mx-1 px-1 w-full items-center">
+        <div className="flex justify-between  mx-1 px-1 w-full items-center">
           <div className="flex flex-col">
             <div className="flex gap-2 items-center">
               <span className="text-md font-semibold">
@@ -117,7 +117,7 @@ const SinglePost = ({ post }) => {
             <i
               className={`${
                 isLiked ? "bx bxs-heart" : "bx bx-heart"
-              } text-base`}
+              } text-xl`}
             ></i>
             <span>
               {post.likes.likeCount === 0 ? "" : post.likes.likeCount}
@@ -130,14 +130,14 @@ const SinglePost = ({ post }) => {
             <i
               className={`${
                 isBookMarked ? "bx bxs-bookmark-star" : "bx bx-bookmark"
-              } text-base`}
+              } text-xl`}
             ></i>
           </span>
           <span
             onClick={() => setShowCommentBox((prev) => !prev)}
             className="flex items-center gap-1"
           >
-            <i className="bx bx-comment text-base"></i>
+            <i className="bx bx-comment text-xl"></i>
             <span>
               {post.comments.length === 0 ? "" : post.comments.length}
             </span>

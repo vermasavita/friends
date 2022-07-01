@@ -14,7 +14,7 @@ const AllPost = () => {
   },[])
 
   return (
-    <div className="w-4/5 xl:w-full px-1">
+    <div className="w-5/6 xl:w-full px-1">
       {loader ? (
         <Loader />
       ) : (

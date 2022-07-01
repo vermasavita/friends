@@ -6,7 +6,7 @@ const Follow = () => {
   const { allUsers } = useSelector((state) => state.user);
   const { user, token } = useSelector((state) => state.auth);
   const [suggestedUser, setSuggestedUser] = useState([]);
-  
+
   useEffect(() => {
     setSuggestedUser(
       allUsers?.filter((item) => item.username !== user.username)?.filter(
@@ -20,8 +20,8 @@ const Follow = () => {
   };
 
   return (
-    <div className="w-1/4 px-2 pb-2 xl:w-1/3 lg:hidden sticky top-0 h-fit">
-      <div className="mx-4 mt-4 bg-white rounded-md shadow border">
+    <div className="w-full px-2 pb-2 lg:hidden sticky top-0 lg:w-0">
+      <div className="mx-4 xl:mx-1 mt-4 bg-white rounded-md shadow border">
         <h1 className="py-4 font-semibold px-3">Who to follow</h1>
         {suggestedUser?.length > 0 ? (
           suggestedUser.map((suggestedUser) => (

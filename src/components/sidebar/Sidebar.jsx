@@ -9,15 +9,15 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`xl:w-1/3 sticky top-0 mr-3 px-10 h-fit sidebar md:fixed md:min-w-full md:mr-0 md:px-0 md:bg-slate-500 md:h-13 `}
+      className={`sticky top-0 w-1/4 lg:w-2/5 mr-3 px-10 lg:px-5 h-fit sidebar md:fixed md:min-w-full md:mr-0 md:px-0 md:bg-rose-600 md:h-13 `}
     >
       <NavLink to="/">
-        <div className="px-3 flex title items-center justify-start mt-3 xl:justify-center md:mt-0">
-          <span className="text-3xl font-bold md:hidden">Friends</span>
+        <div className="px-3 flex title items-center justify-center mt-3 lg:justify-start lg:px-0 md:mt-0">
+          <span className="text-3xl font-bold md:hidden lg:px-4 text-rose-600">Friends</span>
         </div>
       </NavLink>
 
-      <div className=" flex justify-end  md:justify-between">
+      <div className=" flex justify-center  md:justify-between">
         <ul className=" lg:w-4/5 md:flex md:justify-between md:items-center md:m-0 sidebarlist">
           <li className="py-2 text-xl flex gap-3 items-center px-3 hover:bg-white list cursor-pointer rounded-md mb-3 mt-3 md:py-0">
             <NavLink to="/">
@@ -58,7 +58,7 @@ const Sidebar = () => {
             </NavLink>
           </li>
 
-          <li className="py-2 justify-center bg-cyan-800 text-white text-xl flex gap-2 items-center px-3 cursor-pointer rounded-md mb-3 md:hidden">
+          <li className="py-2 justify-center bg-rose-600 text-white text-xl flex gap-2 items-center px-3 cursor-pointer rounded-md mb-3 md:hidden">
             <button
               className="w-full"
               onClick={() => dispatch(openPostCardModal())}

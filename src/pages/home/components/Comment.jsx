@@ -47,7 +47,7 @@ const Comment = ({ post }) => {
 
   return (
     <div>
-      <div className="flex">
+      <div className="flex mb-3">
         <img className="h-8 w-8 object-cover rounded-full" src={user.avatar} />
         <div className=" gap-2 border-gray-200  px-2 py-1 ml-3 border-solid grow flex items-center rounded-md bg-white border">
           <input
@@ -107,7 +107,7 @@ const Comment = ({ post }) => {
                       }))
                     }
                   >
-                    <i className="bx bx-x p-0.5 border rounded-full cursor-pointer"></i>
+                    <i className="bx bx-x p-0.5 rounded-full cursor-pointer"></i>
                   </span>
                 </div>
               ) : (
@@ -118,7 +118,7 @@ const Comment = ({ post }) => {
             </div>
           </div>
          <div
-            className="cursor-pointer relative border"
+            className="cursor-pointer relative"
             onClick={() => setShowCommentAction(!showCommentAction)}
           >
             <i className="bx bx-dots-vertical-rounded text-xl"></i>

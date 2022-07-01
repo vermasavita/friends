@@ -16,12 +16,11 @@ const Bookmark = () => {
   }, [allPosts]);
 
   return (
-    <div className="w-full xl:w-full px-1 h-full">
+    <div className="w-5/6 xl:w-full px-1 h-full">
       {bookmark.length > 0 ? (
         bookmark.map((post) => <SinglePost key={post._id} post={post} />)
       ) : (
         <div className="text-center font-bold text-lg mt-3 text-slate-500">
-          <img src="" alt="" />
           <h1>No Bookmarks</h1>
         </div>
       )}

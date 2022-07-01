@@ -55,7 +55,7 @@ const PostCardM = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         ></textarea>
-        <div className="w-full mt-4 rounded-lg bg-cyan-800 text-white">
+        <div className="w-full mt-4 rounded-lg bg-rose-600 text-white">
           <button
             className={`w-full rounded-lg py-1 ${
               input.length < 1 && "hover: cursor-not-allowed"
