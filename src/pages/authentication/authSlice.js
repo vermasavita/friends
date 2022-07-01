@@ -41,6 +41,46 @@ export const signUpUser = createAsyncThunk(
   }
 );
 
+export const followUserHandler = createAsyncThunk(
+  "post/followUserHandler",
+  async ({ followUserId, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `/api/users/follow/${followUserId}`,
+        {},
+        { headers: { authorization: token } }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
+
+export const unfollowUser = createAsyncThunk(
+  "post/follow",
+  async ({ followUserId, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `/api/users/unfollow/${followUserId}`,
+        {},
+        { headers: { authorization: token } }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -85,6 +125,28 @@ const authSlice = createSlice({
     [signUpUser.rejected]: (state, action) => {
       state.authStatus = "error";
       state.error = action.payload.data.errors;
+    },
+    [followUserHandler.pending]: (state) => {
+      state.status = "pending";
+    },
+    [followUserHandler.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.user = action.payload.data.user;
+    },
+    [followUserHandler.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [unfollowUser.pending]: (state) => {
+      state.status = "pending";
+    },
+    [unfollowUser.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.user = action.payload.data.user;
+    },
+    [unfollowUser.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
     },
   },
 });

@@ -9,6 +9,7 @@ import { formatDate } from "../utils/authUtils";
 export const posts = [
   {
     _id: uuid(),
+    name: "Swiggy Cares",
     content: `Hope the callback was helpful, we will work on making your ordering experiences more pleasant going forward.`,
     likes: {
       likeCount: 0,
@@ -26,6 +27,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Paytm Care",
     content: `Hi, helping you out is our priority. Please follow us back so that further information can be shared with you via DM.`,
     likes: {
       likeCount: 0,
@@ -43,6 +45,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Guest User",
     content: `Usually a good time to invest is when most people are scared of investing.`,
     likes: {
       likeCount: 3,
@@ -60,6 +63,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Snapdeal",
     content: `Make your home the better version of itself with Snapdeal's #HomeAndKitchenMela 🥰 `,
     likes: {
       likeCount: 0,
@@ -76,6 +80,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Amazon India",
     content: `Maintain a perfect work-life balance by playing your favourite music with the Amazon Prime Membership.
     Join Prime Now -  https://amazon.in/amazonprime and listen to more than 90 million songs Ad-Free!`,
     likes: {
@@ -93,6 +98,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Paytm Care",
     content: `Describe your relationship with Paytm with one word.`,
     likes: {
       likeCount: 0,
@@ -109,6 +115,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Guest User",
     content: `"If they wrote it to make money, don't read it." - @naval`,
     likes: {
       likeCount: 0,
@@ -125,6 +132,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Flipkart",
     content: `It’s TUESDAY!! Guess that’s a good enough reason to order the things on your wishlist! :P`,
     likes: {
       likeCount: 0,
@@ -140,6 +148,7 @@ export const posts = [
   /****************************************************************/
   {
     _id: uuid(),
+    name: "Swiggy Cares",
     content: `The journey of a thousand miles begins with one step. -Lao Tzu`,
     likes: {
       likeCount: 0,
@@ -156,6 +165,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Flipkart",
     content: `not all superheros wear capes, some give their detailed reviews on products with pictures.`,
     likes: {
       likeCount: 0,
@@ -172,6 +182,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Paytm Care",
     content: `Aaj kahana nai milega. Katti`,
     likes: {
       likeCount: 0,
@@ -188,6 +199,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Amazon India",
     content: `Celebrate equality this Pride Day with Amazon Pay Gift Cards.
     https://amzn.to/3A2ViKI`,
     likes: {
@@ -205,6 +217,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Paytm Care",
     content: `Receive money directly in your Bank A/c from anyone, anywhere using #PaytmSeUPI 📲`,
     likes: {
       likeCount: 0,
@@ -221,6 +234,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Paytm Care",
     content: `Use Paytm se UPI. Scan any QR and make payments directly from your Bank A/c 📲`,
     likes: {
       likeCount: 3,
@@ -238,6 +252,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Snapdeal",
     content:
       "What’s better than monsoon essentials that match your style? Nothing! Head to #Snapdeal and shop now 😍",
     likes: {
@@ -255,6 +270,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Swiggy Cares",
     content: "Today is my best day, order food from zomato?",
     likes: {
       likeCount: 2,
@@ -271,6 +287,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Guest User",
     content: `Nothing can beat the joy of seeing live users on your website.`,
     likes: {
       likeCount: 0,
@@ -308,6 +325,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Paytm Care",
     content: "Just read Kurt Vonnegaut's Slaughter House 5 and it's amazing!",
     likes: {
       likeCount: 2,
@@ -324,8 +342,8 @@ export const posts = [
 
   {
     _id: uuid(),
-    content:
-      "Do UPI payment. Make us rich.",
+    name: "Paytm Care",
+    content: "Do UPI payment. Make us rich.",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -341,6 +359,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Flipkart",
     content: "We sometime flip",
     likes: {
       likeCount: 2,
@@ -357,6 +376,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Snapdeal",
     content: "I am very good at selling no product, React JS ♥",
     likes: {
       likeCount: 3,
@@ -373,6 +393,7 @@ export const posts = [
 
   {
     _id: uuid(),
+    name: "Amazon India",
     content: "Today is the best day of our life, we are selling amazon",
     likes: {
       likeCount: 1,
