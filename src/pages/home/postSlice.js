@@ -182,6 +182,39 @@ export const removeBookmarkPost = createAsyncThunk(
   }
 );
 
+// const getComment = createSlice("post/getComment", async (postId, thunkAPI) => {
+//   try {
+//     const response = await axios.get(`/api/comments/${postId}`)
+//     const data = { data: response.data, status: response.status };
+//       return data;
+//   } catch (error) {
+//     return thunkAPI.rejectWithValue({
+//       data: error.response.data,
+//       status: error.response.status,
+//     });
+//   }
+// });
+
+export const addComment = createAsyncThunk(
+  "post/addComment",
+  async ({ postId, commentData, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `/api/comments/add/${postId}`,
+        { commentData },
+        { headers: { authorization: token } }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
+
 const initialState = {
   allPosts: [],
   userPosts: [],
@@ -289,6 +322,17 @@ const postSlice = createSlice({
       state.allPosts = action.payload.data.posts;
     },
     [removeBookmarkPost.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [addComment.pending]: (state) => {
+      state.status = "pending";
+    },
+    [addComment.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [addComment.rejected]: (state, action) => {
       state.status = "rejected";
       console.error(action.payload.data.errors[0]);
     },

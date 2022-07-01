@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Comment } from "./Comment";
 import { openPostCardModal } from "../../../components/postCardModal/postCardModalSlice";
 import {
   bookmarkPost,
@@ -13,6 +14,7 @@ const SinglePost = ({ post }) => {
   const dispatch = useDispatch();
   const [editPost, setEditPost] = useState("");
   const { allUsers, authUser } = useSelector((state) => state.user);
+  const [showCommentBox, setShowCommentBox] = useState(false);
   const { user, token } = useSelector((state) => state.auth);
   const userInfo =
     allUsers && allUsers?.find((user) => user.username === post.username);
@@ -131,19 +133,24 @@ const SinglePost = ({ post }) => {
               } text-base`}
             ></i>
           </span>
+          <span
+            onClick={() => setShowCommentBox((prev) => !prev)}
+            className="flex items-center gap-1"
+          >
+            <i className="bx bx-comment text-base"></i>
+            <span>
+              {post.comments.length}
+            </span>
+          </span>
         </div>
       </div>
-      <div className="flex">
-        <img className="h-8 w-8 object-cover rounded-full" src={user.avatar} />
-        <div className=" border-gray-200 self-center px-2 py-1 ml-3 border-solid grow flex space-between items-center rounded-md bg-white border">
-          <input
-            type="text"
-            className="grow focus:outline-none sm:text-sm bg-white"
-            placeholder="Add a comment"
-          />
-          <button className="text-cyan-800">Post</button>
+      {showCommentBox ? (
+        <div>
+          <Comment post={post}/>
         </div>
-      </div>
+      ) : (
+        <></>
+      )}
     </div>
   ) : (
     <></>
