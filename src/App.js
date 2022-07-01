@@ -7,6 +7,7 @@ import {
   AllPost,
   Profile,
   Feed,
+  Error,
   EditProfileModal,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
@@ -87,6 +88,7 @@ const App = () => {
               </RequireAuth>
             }
           />
+          <Route path="*" element={<Error />} />
         </Routes>
 
         <PostCardM />

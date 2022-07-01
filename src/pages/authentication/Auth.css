@@ -3,6 +3,16 @@
   z-index: 1;
 }
 
+.errorbox {
+  height: 100vh;
+}
+
+
+.error-img{
+  height: 40%;
+  width: 50%;
+}
+
 @media screen and (max-width: 767px) {
   .width {
     width: 90vw !important;
