@@ -182,19 +182,6 @@ export const removeBookmarkPost = createAsyncThunk(
   }
 );
 
-// const getComment = createSlice("post/getComment", async (postId, thunkAPI) => {
-//   try {
-//     const response = await axios.get(`/api/comments/${postId}`)
-//     const data = { data: response.data, status: response.status };
-//       return data;
-//   } catch (error) {
-//     return thunkAPI.rejectWithValue({
-//       data: error.response.data,
-//       status: error.response.status,
-//     });
-//   }
-// });
-
 export const addComment = createAsyncThunk(
   "post/addComment",
   async ({ postId, commentData, token }, thunkAPI) => {
@@ -207,6 +194,26 @@ export const addComment = createAsyncThunk(
       const data = { data: response.data, status: response.status };
       return data;
     } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
+
+export const deleteComment = createAsyncThunk(
+  "post/deleteComment",
+  async ({ postId, commentId, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `/api/comments/delete/${postId}/${commentId}`,
+        {},
+        { headers: { authorization: token } }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (response) {
       return thunkAPI.rejectWithValue({
         data: error.response.data,
         status: error.response.status,
@@ -333,6 +340,17 @@ const postSlice = createSlice({
       state.allPosts = action.payload.data.posts;
     },
     [addComment.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [deleteComment.pending]: (state) => {
+      state.status = "pending";
+    },
+    [deleteComment.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [deleteComment.rejected]: (state, action) => {
       state.status = "rejected";
       console.error(action.payload.data.errors[0]);
     },

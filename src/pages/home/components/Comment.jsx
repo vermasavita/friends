@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { addComment } from "../postSlice";
+import { addComment, deleteComment } from "../postSlice";
 
 const Comment = ({ post }) => {
   const [showCommentAction, setShowCommentAction] = useState("");
@@ -21,11 +21,13 @@ const Comment = ({ post }) => {
           token: token,
         })
       );
-      setCommentInput({text: ""});
+      setCommentInput({ text: "" });
     } else {
       toast("Comment something, it cannot be empty");
     }
   };
+
+ 
   return (
     <div>
       <div className="flex">
@@ -81,7 +83,14 @@ const Comment = ({ post }) => {
                   <i className="bx bxs-edit-alt"></i>
                   <span>Edit</span>
                 </li>
-                <li className="text-black hover:bg-blue-50 rounded-sm p-1 flex gap-2 items-center">
+                <li
+                  onClick={() => dispatch(deleteComment({
+                    postId: post._id,
+                    commentId: item._id,
+                    token: token,
+                  }))}
+                  className="text-black hover:bg-blue-50 rounded-sm p-1 flex gap-2 items-center"
+                >
                   <i className="bx bxs-trash-alt"></i>
                   <span>Delete</span>
                 </li>

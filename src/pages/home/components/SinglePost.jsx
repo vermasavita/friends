@@ -139,7 +139,7 @@ const SinglePost = ({ post }) => {
           >
             <i className="bx bx-comment text-base"></i>
             <span>
-              {post.comments.length}
+              {post.comments.length === 0 ? "" : post.comments.length}
             </span>
           </span>
         </div>
