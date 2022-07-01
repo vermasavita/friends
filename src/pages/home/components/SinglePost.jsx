@@ -49,7 +49,7 @@ const SinglePost = ({ post }) => {
 
   return userInfo ? (
     <div
-      className="bg-white flex flex-col px-3 py-4 pb-0 rounded-md border w-full mt-3 shadow"
+      className="bg-white flex flex-col px-4 py-4 pb-0 rounded-md border w-full mt-3 shadow"
       key={post._id}
     >
       <div className="flex cursor-pointer">

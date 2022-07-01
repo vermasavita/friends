@@ -9,14 +9,14 @@ import { formatDate } from "../utils/authUtils";
 export const posts = [
   {
     _id: uuid(),
-    name: "Swiggy Cares",
-    content: `Hope the callback was helpful, we will work on making your ordering experiences more pleasant going forward.`,
+    name: "Paul Graham",
+    content: `One upside of watching year 5 C-team cricket is that you see things you'd never see otherwise. Like a batsman missing the ball on his first try, doing a 360 as a result, and then hitting the ball. Ignore`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "SwiggyCares",
+    username: "paulg",
     bookmark: [],
     createdAt: new Date("Feb 23 2022 12:31:25"),
     updatedAt: formatDate(),
@@ -27,14 +27,17 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Paytm Care",
-    content: `Hi, helping you out is our priority. Please follow us back so that further information can be shared with you via DM.`,
+    name: "Veronica Humble",
+    content: `Yesterday is history,
+    tomorrow is a mystery,
+    and today is a gift...
+    that's why they call it present`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "paytmcare",
+    username: "veronica_humble",
     bookmark: [],
     createdAt: new Date("March 13 2022 12:31:25"),
     updatedAt: formatDate(),
@@ -45,14 +48,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Guest User",
-    content: `Usually a good time to invest is when most people are scared of investing.`,
+    name: "Savita Verma",
+    content: `There are no coincidences in this world.`,
     likes: {
       likeCount: 3,
       dislikedBy: [],
       likedBy: [],
     },
-    username: "guestuser",
+    username: "savitaverma",
     bookmark: [],
     createdAt: new Date("May 03 2022 12:31:25"),
     updatedAt: formatDate(),
@@ -63,14 +66,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Snapdeal",
-    content: `Make your home the better version of itself with Snapdeal's #HomeAndKitchenMela 🥰 `,
+    name: "Emanuel",
+    content: `In “Bad Day At Black Rock” which I’d never seen before Spencer Tracy is the original Macgyver `,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "Snapdeal",
+    username: "Emanuel",
     bookmark: [],
     createdAt: new Date("April 18 2022 12:31:25"),
     updatedAt: formatDate(),
@@ -80,15 +83,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Amazon India",
-    content: `Maintain a perfect work-life balance by playing your favourite music with the Amazon Prime Membership.
-    Join Prime Now -  https://amazon.in/amazonprime and listen to more than 90 million songs Ad-Free!`,
+    name: "Agustin Lebron",
+    content: `Kinda relieved that DeFi hadn’t “figured out undercollateralized lending” for this cycle`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "amazonIN",
+    username: "AgustinLebron4",
     bookmark: [],
     createdAt: new Date("Jan 01 2022 12:31:25"),
     updatedAt: formatDate(),
@@ -98,14 +100,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Paytm Care",
-    content: `Describe your relationship with Paytm with one word.`,
+    name: "Veronica Humble",
+    content: `Describe your relationships in one word.`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "paytmcare",
+    username: "veronica_humble",
     bookmark: [],
     createdAt: new Date("Dec 15 2020 12:31:25"),
     updatedAt: formatDate(),
@@ -115,14 +117,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Guest User",
-    content: `"If they wrote it to make money, don't read it." - @naval`,
+    name: "Savita Verma",
+    content: `If they wrote it to make money, don't read it." - @naval`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "guestuser",
+    username: "savitaverma",
     bookmark: [],
     createdAt: new Date("May 12 2022 10:31:25"),
     updatedAt: formatDate(),
@@ -132,14 +134,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Flipkart",
+    name: "Domink",
     content: `It’s TUESDAY!! Guess that’s a good enough reason to order the things on your wishlist! :P`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "flipkart",
+    username: "Domink",
     bookmark: [],
     createdAt: new Date("Feb 28 2022 12:31:25"),
     updatedAt: formatDate(),
@@ -148,14 +150,14 @@ export const posts = [
   /****************************************************************/
   {
     _id: uuid(),
-    name: "Swiggy Cares",
-    content: `The journey of a thousand miles begins with one step. -Lao Tzu`,
+    name: "Paul Graham",
+    content: `Just relax`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "SwiggyCares",
+    username: "paulg",
     bookmark: [],
     createdAt: new Date("October 09 2021 12:31:25"),
     updatedAt: formatDate(),
@@ -165,14 +167,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Flipkart",
+    name: "Domink",
     content: `not all superheros wear capes, some give their detailed reviews on products with pictures.`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "flipkart",
+    username: "Domink",
     bookmark: [],
     createdAt: new Date("November 14 2021 12:31:25"),
     updatedAt: formatDate(),
@@ -182,14 +184,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Paytm Care",
+    name: "Veronica Humble",
     content: `Aaj kahana nai milega. Katti`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "paytmcare",
+    username: "veronica_humble",
     bookmark: [],
     createdAt: new Date("February 16 2022 12:31:25"),
     updatedAt: formatDate(),
@@ -199,15 +201,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Amazon India",
-    content: `Celebrate equality this Pride Day with Amazon Pay Gift Cards.
-    https://amzn.to/3A2ViKI`,
+    name: "Agustin Lebron",
+    content: `I have gotten *really* good at memorizing 6 digit numbers for a duration of 5 seconds.`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "amazonIN",
+    username: "AgustinLebron4",
     bookmark: [],
     createdAt: new Date("April 05 2021 12:31:25"),
     updatedAt: formatDate(),
@@ -217,14 +218,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Paytm Care",
-    content: `Receive money directly in your Bank A/c from anyone, anywhere using #PaytmSeUPI 📲`,
+    name: "Veronica Humble",
+    content: `If you only do what you can do, you will never be more than who you are.`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "paytmcare",
+    username: "veronica_humble",
     bookmark: [],
     createdAt: new Date("April 03 2022 12:31:25"),
     updatedAt: formatDate(),
@@ -234,15 +235,15 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Paytm Care",
-    content: `Use Paytm se UPI. Scan any QR and make payments directly from your Bank A/c 📲`,
+    name: "Veronica Humble",
+    content: `There is no secret ingredient`,
     likes: {
       likeCount: 3,
       likedBy: [],
       dislikedBy: [],
     },
 
-    username: "paytmcare",
+    username: "veronica_humble",
     bookmark: [],
     createdAt: new Date("March 26 2022 12:31:25"),
     updatedAt: formatDate(),
@@ -252,15 +253,15 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Snapdeal",
+    name: "Emanuel",
     content:
-      "What’s better than monsoon essentials that match your style? Nothing! Head to #Snapdeal and shop now 😍",
+      "What's your name?",
     likes: {
       likeCount: 4,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "Snapdeal",
+    username: "Emanuel",
     bookmark: [],
     createdAt: new Date("April 03 2021 12:31:25"),
     updatedAt: formatDate(),
@@ -270,14 +271,15 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Swiggy Cares",
-    content: "Today is my best day, order food from zomato?",
+    name: "Paul Graham",
+    content:
+      "The non-conformism of Americans was arguably an advantage relative to European countries a few decades ago. But now that every country has become more polarized and fragmented, European countries may be better off.",
     likes: {
       likeCount: 2,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "SwiggyCares",
+    username: "paulg",
     bookmark: [],
     createdAt: new Date("August 02 2021 12:31:25"),
     updatedAt: formatDate(),
@@ -287,14 +289,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Guest User",
-    content: `Nothing can beat the joy of seeing live users on your website.`,
+    name: "Savita Verma",
+    content: `If you only do what you can do, you will never be more than you are now.`,
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "guestuser",
+    username: "savitaverma",
     bookmark: [],
     createdAt: new Date("July 18 2021 12:31:25"),
     updatedAt: formatDate(),
@@ -303,11 +305,11 @@ export const posts = [
     comments: [
       {
         _id: uuid(),
-        username: "SwiggyCares",
-        firstName: "Swiggy",
-        lastName: "Cares",
+        username: "paulg",
+        firstName: "Paul",
+        lastName: "Graham",
         avatar:
-        "https://pbs.twimg.com/profile_images/1176803431396151296/_VRXuYc4_400x400.jpg",
+          "https://pbs.twimg.com/profile_images/1824002576/pg-railsconf_400x400.jpg",
         text: "Live users are awesome",
         votes: {
           upvotedBy: [],
@@ -316,11 +318,11 @@ export const posts = [
       },
       {
         _id: uuid(),
-        username: "paytmcare",
-        firstName: "Paytm",
-        lastName: "Care",
+        username: "veronica_humble",
+        firstName: "Veronica",
+        lastName: "Humble",
         avatar:
-          "https://pbs.twimg.com/profile_images/487960166445223938/6gD-vpHX_400x400.jpeg",
+          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         text: "yes you are right!",
         votes: {
           upvotedBy: [],
@@ -333,14 +335,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Paytm Care",
-    content: "Just read Kurt Vonnegaut's Slaughter House 5 and it's amazing!",
+    name: "Veronica Humble",
+    content: "Your mind is like this water, my friend. When it is agitated, it becomes difficult to see. But if you allow it to settle, the answer becomes clear.",
     likes: {
       likeCount: 2,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "paytmcare",
+    username: "veronica_humble",
     bookmark: [],
     createdAt: new Date("July 13 2021 12:31:25"),
     updatedAt: formatDate(),
@@ -350,14 +352,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Paytm Care",
-    content: "Do UPI payment. Make us rich.",
+    name: "Veronica Humble",
+    content: "Do your work.",
     likes: {
       likeCount: 5,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "paytmcare",
+    username: "veronica_humble",
     bookmark: [],
     createdAt: new Date("August 05 2022 12:31:25"),
     updatedAt: formatDate(),
@@ -367,14 +369,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Flipkart",
-    content: "We sometime flip",
+    name: "Domink",
+    content: "I sometime flip",
     likes: {
       likeCount: 2,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "flipkart",
+    username: "Domink",
     bookmark: [],
     createdAt: new Date("October 08 2021 12:31:25"),
     updatedAt: formatDate(),
@@ -384,14 +386,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Snapdeal",
-    content: "I am very good at selling no product, React JS ♥",
+    name: "Emanuel",
+    content: "I am very good at selling no product.",
     likes: {
       likeCount: 3,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "Snapdeal",
+    username: "Emanuel",
     bookmark: [],
     createdAt: new Date("March 27 2021 12:31:25"),
     updatedAt: formatDate(),
@@ -401,14 +403,14 @@ export const posts = [
 
   {
     _id: uuid(),
-    name: "Amazon India",
+    name: "Agustin Lebron",
     content: "Today is the best day of our life, we are selling amazon",
     likes: {
       likeCount: 1,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "amazonIN",
+    username: "AgustinLebron4",
     bookmark: [],
     createdAt: new Date("March 16 2021 12:31:25"),
     updatedAt: formatDate(),
