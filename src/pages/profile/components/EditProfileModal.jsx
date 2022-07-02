@@ -69,7 +69,7 @@ const EditProfileModal = () => {
             <div className="w-9/12 relative">
               <img
                 src={updateUserData?.avatar}
-                className="h-12 w-12 object-cover rounded-full sm:h-10 sm:w-11"
+                className="h-12 w-12 object-cover rounded-full sm:h-10 sm:w-11 border"
               />
               <i className="text-slate-800 bx bxs-camera absolute top-7 left-7 text-lg cursor-pointer"></i>
               <input

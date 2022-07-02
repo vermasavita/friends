@@ -38,7 +38,7 @@ const UserProfile = () => {
           />
         </div>
 
-        <span className="text-lg font-semibold mt-2">{`${authUser.firstName} ${authUser.lastName}`}</span>
+        <span className="text-xl font-semibold mt-2">{`${authUser.firstName} ${authUser.lastName}`}</span>
         <span className="text-sm text-gray-500">@{authUser.username}</span>
         <button
           onClick={() => dispatch(openEditProfileModal())}

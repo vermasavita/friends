@@ -111,18 +111,15 @@ const Comment = ({ post }) => {
                   </span>
                 </div>
               ) : (
-                <span className="text-sm text-slate-800">
-                  {item.text}
-                </span>
+                <span className="text-sm text-slate-800">{item.text}</span>
               )}
             </div>
           </div>
-         <div
-            className="cursor-pointer relative"
-            onClick={() => setShowCommentAction(!showCommentAction)}
-          >
-            <i className="bx bx-dots-vertical-rounded text-xl"></i>
-            {showCommentAction ? (
+          {showCommentAction ? (
+            <div className="cursor-pointer relative">
+              <span onClick={() => setShowCommentAction(!showCommentAction)}>
+                <i className="bx bx-dots-vertical-rounded text-xl"></i>
+              </span>
               <ul className="border rounded-md w-32 bg-white absolute m-0 top-7 right-4 text-sm text-gray-500 flex flex-col p-1">
                 <li
                   onClick={() => {
@@ -154,10 +151,10 @@ const Comment = ({ post }) => {
                   <span>Delete</span>
                 </li>
               </ul>
-            ) : (
-              <></>
-            )}
-          </div>
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       ))}
     </div>
