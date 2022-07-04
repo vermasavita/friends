@@ -225,14 +225,12 @@ export const deleteComment = createAsyncThunk(
 export const editComment = createAsyncThunk(
   "post/editComment",
   async ({ postId, commentId, commentData, token }, thunkAPI) => {
-    console.log(postId, commentId, commentData, token)
     try {
       const response = await axios.post(
         `/api/comments/edit/${postId}/${commentId}`,
         { commentData },
         { headers: { authorization: token } }
       );
-      console.log(response)
       const data = { data: response.data, status: response.status };
       return data;
     } catch (error) {

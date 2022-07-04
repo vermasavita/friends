@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { closeEditProfileModal } from "../profileModalSlice";
 import { updateUserInfo } from "../userSlice";
+import axios from "axios";
 
 const EditProfileModal = () => {
   const { editProfileModal } = useSelector((state) => state.profileModal);
@@ -11,27 +12,28 @@ const EditProfileModal = () => {
   const dispatch = useDispatch();
   const [updateUserData, setUpdateUserData] = useState({});
 
-  useEffect(() => {
-    setUpdateUserData({ ...authUser });
-  }, [authUser]);
-
+  console.log(updateUserData )
   const updateUserInforHandler = () => {
     dispatch(updateUserInfo({ userData: { ...updateUserData }, token: token }));
     dispatch(closeEditProfileModal());
     toast.success("Profile Updated!");
   };
 
+  useEffect(() => {
+    setUpdateUserData({ ...authUser });
+  }, [authUser]);
+
   const updateImageHandler = async (image) => {
     try {
       const data = new FormData();
       data.append("file", image);
-      data.append("upload_preset", "pfsqnxae");
+      data.append("upload_preset", "sls1eclu");
       const request = {
         method: "POST",
         body: "data",
       };
       await fetch(
-        "https://api.cloudinary.com/v1_1/depmzczni/image/upload",
+        "https://api.cloudinary.com/v1_1/dus3r5adq/image/upload",
         request
       )
         .then((response) => response.json())
@@ -45,6 +47,14 @@ const EditProfileModal = () => {
       console.log(error);
     }
   };
+
+  const updateImage = (files) => {
+    const formData = new FormData();
+    formData.append("file", files[0]);
+    formData.append("upload_preset", "sls1eclu");
+
+    axios.post("https://api.cloudinary.com/v1_1/dus3r5adq/image/upload", formData).then(response => console.log(response).catch(error => {console.log(error)}))
+  }
   return (
     <div
       className={`container fixed justify-center items-center ${
@@ -65,7 +75,9 @@ const EditProfileModal = () => {
         </div>
         <div className="flex flex-col mt-3">
           <div className="flex justify-between gap-4 mb-3">
-            <div className="gap-2 text-slate-500 text-lg md:text-md">Avatar</div>
+            <div className="gap-2 text-slate-500 text-lg md:text-md">
+              Avatar
+            </div>
             <div className="w-9/12 relative">
               <img
                 src={updateUserData?.avatar}
@@ -76,12 +88,14 @@ const EditProfileModal = () => {
                 type="file"
                 className="absolute opacity-0 w-8  top-7 left-7 cursor-pointer"
                 accept="image/jpeg, image/png, image/svg+xml, image/jpg, image/webp image/apng, image/avif, image/gif,"
-                onChange={(e) => updateImageHandler(e.target.files[0])}
+                onChange={(e) => updateImage(e.target.files)}
               />
             </div>
           </div>
           <div className="flex justify-between gap-4 mb-3">
-            <div className="gap-2 text-slate-500 text-lg md:text-md">FirstName</div>
+            <div className="gap-2 text-slate-500 text-lg md:text-md">
+              FirstName
+            </div>
             <input
               value={updateUserData.firstName}
               onChange={(e) =>
@@ -94,7 +108,9 @@ const EditProfileModal = () => {
             />
           </div>
           <div className="flex justify-between gap-4 mb-3">
-            <div className="gap-2 text-slate-500 text-lg md:text-md">LastName</div>
+            <div className="gap-2 text-slate-500 text-lg md:text-md">
+              LastName
+            </div>
             <input
               value={updateUserData.lastName}
               onChange={(e) =>
@@ -107,7 +123,9 @@ const EditProfileModal = () => {
             />
           </div>
           <div className="flex justify-between gap-4 mb-3">
-            <div className="gap-2 text-slate-500 text-lg md:text-md">Website</div>
+            <div className="gap-2 text-slate-500 text-lg md:text-md">
+              Website
+            </div>
             <input
               value={updateUserData.website}
               onChange={(e) =>

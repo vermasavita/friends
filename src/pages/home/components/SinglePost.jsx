@@ -80,9 +80,9 @@ const SinglePost = ({ post }) => {
           {user.username === post.username && (
             <div
               onClick={() => setEditPost(!editPost)}
-              className="flex justify-centera items-center py-1 px-1 hover:rounded-full hover:bg-slate-200 cursor-pointer relative"
+              className="flex  items-center py-1 px-1 hover:rounded-full hover:bg-slate-200 cursor-pointer relative"
             >
-              <i className="bx bx-dots-vertical-rounded"></i>
+              <i className="bx bx-dots-vertical-rounded pointer"></i>
               {editPost && (
                 <ul className="border rounded-md w-32 bg-white absolute m-0 top-7 right-4 text-sm text-gray-500 flex flex-col p-1">
                   <li

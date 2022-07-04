@@ -13,6 +13,14 @@
   width: 50%;
 }
 
+.widthe{
+  width: 100% !important;
+}
+
+.pointer{
+  border: 1px solid black;
+  position: sticky;
+}
 @media screen and (max-width: 767px) {
   .width {
     width: 90vw !important;
@@ -35,5 +43,17 @@
   
   .list:hover {
     background: none !important;
+  }
+}
+
+@media screen and (max-width: 523px){
+  .menucomment{
+    margin-right: 50rem !important;
+  }
+}
+
+@media screen and (max-width: 516px){
+  .menucomment{
+    margin-right: 30rem !important;
   }
 }

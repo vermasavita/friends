@@ -18,7 +18,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllPost, getUserPost } from "./pages/home/postSlice";
 import { getUsers } from "./pages/profile/userSlice";
-import { AnyProfile } from "./pages/profile/AnyProfile";
 
 const App = () => {
   const dispatch = useDispatch();

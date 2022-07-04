@@ -18,7 +18,7 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:
-      "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "https://res.cloudinary.com/dus3r5adq/image/upload/v1656968346/friends/savita.jpg",
     bio: "Work in Progress",
     website: "https://twitter.com/",
   },
@@ -34,9 +34,9 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:
-      "https://pbs.twimg.com/profile_images/1824002576/pg-railsconf_400x400.jpg",
+      "https://res.cloudinary.com/dus3r5adq/image/upload/v1656968050/friends/paulimage.jpg",
     bio: "I am Paul",
-    website: "https://www.swiggy.com/restaurants",
+    website: "I am not Paul",
   },
   /****************************************************************/
   {
@@ -50,7 +50,7 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "https://res.cloudinary.com/dus3r5adq/image/upload/v1656968161/friends/veronica.jpg",
     bio: "I am Veronica",
     website: "",
   },
@@ -66,7 +66,7 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:
-      "https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Ym95fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "https://res.cloudinary.com/dus3r5adq/image/upload/v1656968234/friends/agustin.jpg",
     bio: "I am Agustin Lebron",
     website: "",
   },
@@ -82,7 +82,7 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:
-      "https://images.unsplash.com/photo-1596392927852-2a18c336fb78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJveXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "https://res.cloudinary.com/dus3r5adq/image/upload/v1656968230/friends/emanuel.jpg",
     bio: "For any order related queries, please tweet",
     website: "",
   },
@@ -97,7 +97,7 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
     avatar:
-      "https://images.unsplash.com/photo-1482849737880-498de71dda8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGJveXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "https://res.cloudinary.com/dus3r5adq/image/upload/v1656968298/friends/domink.jpg",
     bio: "India's favourite destination!",
     website: "",
   },
