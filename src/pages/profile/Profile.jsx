@@ -16,7 +16,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <div className="w-full xl:w-full px-1 mb-8">
+    <div className="w-5/6 xl:w-full px-1 mb-8">
       {loader ? (
         <Loader />
       ) : (

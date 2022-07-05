@@ -17,11 +17,11 @@ const FollowingModal = () => {
         followingModal ? "flex" : "hidden"
       }`}
     >
-      <div className="w-1/3 bg-white p-3 flex flex-col rounded-lg sm:w-full md:w-3/4">
+      <div className="w-1/3 bg-white px-3 py-3 flex flex-col rounded-lg sm:w-full md:w-3/4">
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-extrabold">Following</h2>
           <button
-            className=" border-cyan-800 px-1.5"
+            className=" border-blue-400 px-1.5 py-0"
             onClick={() => {
               dispatch(closeFollowingModal());
             }}
@@ -49,7 +49,7 @@ const FollowingModal = () => {
 
                   <button
                     onClick={() => unfollowHandler(following._id)}
-                    className="bg-cyan-800 text-white rounded-md px-3 py-1 cursor-pointer"
+                    className="bg-blue-400 text-white rounded-md px-3 py-1 cursor-pointer"
                   >
                     Unfollow
                   </button>

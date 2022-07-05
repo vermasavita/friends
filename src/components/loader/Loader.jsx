@@ -1,8 +1,8 @@
 import "./loader.css"
 const Loader = () => {
     return(
-        <div className="">
-            <img src="https://i.gifer.com/7plQ.gif" alt="" />
+        <div className="w-full wrapper-loader">
+            <img src="https://i.gifer.com/YCZH.gif" className="loader" />
         </div>
     )
 }

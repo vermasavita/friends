@@ -1,0 +1,15 @@
+.loader{
+    padding: 0 !important;
+    margin: auto;
+}
+
+.wrapper-loader{
+    margin: auto !important;
+}
+
+@media screen and (max-width: 457px) {
+    .loader{
+        margin: 0;
+    }   
+}
+

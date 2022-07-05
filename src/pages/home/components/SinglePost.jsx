@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Comment } from "./Comment";
 import { openPostCardModal } from "../../../components/postCardModal/postCardModalSlice";
 import {
   bookmarkPost,
@@ -8,11 +9,14 @@ import {
   likePost,
   removeBookmarkPost,
 } from "../postSlice";
+import { useNavigate } from "react-router-dom";
 
 const SinglePost = ({ post }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [editPost, setEditPost] = useState("");
   const { allUsers, authUser } = useSelector((state) => state.user);
+  const [showCommentBox, setShowCommentBox] = useState(false);
   const { user, token } = useSelector((state) => state.auth);
   const userInfo =
     allUsers && allUsers?.find((user) => user.username === post.username);
@@ -47,7 +51,7 @@ const SinglePost = ({ post }) => {
 
   return userInfo ? (
     <div
-      className="bg-white flex flex-col px-5 py-3 rounded-md border w-full mt-3"
+      className="bg-white flex flex-col px-4 py-4 pb-0 rounded-md w-full mt-3 shadow"
       key={post._id}
     >
       <div className="flex cursor-pointer">
@@ -55,15 +59,18 @@ const SinglePost = ({ post }) => {
           <img
             src={
               user.username === userInfo?.username
-                ? user.avatar
+                ? authUser.avatar
                 : userInfo.avatar
             }
             className="h-11 w-12 object-cover rounded-full sm:h-10 sm:w-11"
           />
         </div>
-        <div className="flex justify-between mx-1 px-1 w-full items-center">
+        <div className="flex justify-between  mx-1 px-1 w-full items-center">
           <div className="flex flex-col">
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center" onClick={() => {
+              user.username === userInfo?.username ? 
+              navigate("/profile") : navigate(`/profile/${userInfo.username}`)
+            }}>
               <span className="text-md font-semibold">
                 {user.username === post.username
                   ? `${authUser.firstName} ${authUser.lastName}`
@@ -78,9 +85,9 @@ const SinglePost = ({ post }) => {
           {user.username === post.username && (
             <div
               onClick={() => setEditPost(!editPost)}
-              className="flex justify-centera items-center py-1 px-1 hover:rounded-full hover:bg-slate-200 cursor-pointer relative"
+              className="flex  items-center py-1 px-1 hover:rounded-full hover:bg-slate-200 cursor-pointer relative"
             >
-              <i className="bx bx-dots-vertical-rounded"></i>
+              <i className="bx bx-dots-vertical-rounded pointer"></i>
               {editPost && (
                 <ul className="border rounded-md w-32 bg-white absolute m-0 top-7 right-4 text-sm text-gray-500 flex flex-col p-1">
                   <li
@@ -115,7 +122,7 @@ const SinglePost = ({ post }) => {
             <i
               className={`${
                 isLiked ? "bx bxs-heart" : "bx bx-heart"
-              } text-base`}
+              } text-xl`}
             ></i>
             <span>
               {post.likes.likeCount === 0 ? "" : post.likes.likeCount}
@@ -128,22 +135,27 @@ const SinglePost = ({ post }) => {
             <i
               className={`${
                 isBookMarked ? "bx bxs-bookmark-star" : "bx bx-bookmark"
-              } text-base`}
+              } text-xl`}
             ></i>
+          </span>
+          <span
+            onClick={() => setShowCommentBox((prev) => !prev)}
+            className="flex items-center gap-1"
+          >
+            <i className="bx bx-comment text-xl"></i>
+            <span>
+              {post.comments.length === 0 ? "" : post.comments.length}
+            </span>
           </span>
         </div>
       </div>
-      <div className="flex">
-        <img className="h-8 w-8 object-cover rounded-full" src={user.avatar} />
-        <div className=" border-gray-200 self-center px-2 py-1 ml-3 border-solid grow flex space-between items-center rounded-md bg-white border">
-          <input
-            type="text"
-            className="grow focus:outline-none sm:text-sm bg-white"
-            placeholder="Add a comment"
-          />
-          <button className="text-cyan-800">Post</button>
+      {showCommentBox ? (
+        <div>
+          <Comment post={post}/>
         </div>
-      </div>
+      ) : (
+        <></>
+      )}
     </div>
   ) : (
     <></>

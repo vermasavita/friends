@@ -7,7 +7,9 @@ import {
   AllPost,
   Profile,
   Feed,
-  EditProfileModal
+  Error,
+  EditProfileModal,
+  IndividualUserProfile
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import { RequireAuth } from "./RequiresAuth";
@@ -86,10 +88,22 @@ const App = () => {
               </RequireAuth>
             }
           />
+          <Route
+            path="/profile/:userId"
+            element={
+              <RequireAuth>
+                <Wrapper>
+                  <IndividualUserProfile />
+                </Wrapper>
+              </RequireAuth>
+            }
+          />
+          <Route path="*" element={<Error />} />
         </Routes>
+
         <PostCardM />
-        <EditProfileModal/>
-        <FollowingModal/>
+        <EditProfileModal />
+        <FollowingModal />
       </Router>
     </div>
   );

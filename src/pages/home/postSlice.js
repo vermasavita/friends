@@ -182,6 +182,65 @@ export const removeBookmarkPost = createAsyncThunk(
   }
 );
 
+export const addComment = createAsyncThunk(
+  "post/addComment",
+  async ({ postId, commentData, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `/api/comments/add/${postId}`,
+        { commentData },
+        { headers: { authorization: token } }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
+
+export const deleteComment = createAsyncThunk(
+  "post/deleteComment",
+  async ({ postId, commentId, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `/api/comments/delete/${postId}/${commentId}`,
+        {},
+        { headers: { authorization: token } }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
+
+export const editComment = createAsyncThunk(
+  "post/editComment",
+  async ({ postId, commentId, commentData, token }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `/api/comments/edit/${postId}/${commentId}`,
+        { commentData },
+        { headers: { authorization: token } }
+      );
+      const data = { data: response.data, status: response.status };
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        data: error.response.data,
+        status: error.response.status,
+      });
+    }
+  }
+);
 const initialState = {
   allPosts: [],
   userPosts: [],
@@ -289,6 +348,39 @@ const postSlice = createSlice({
       state.allPosts = action.payload.data.posts;
     },
     [removeBookmarkPost.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [addComment.pending]: (state) => {
+      state.status = "pending";
+    },
+    [addComment.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [addComment.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [deleteComment.pending]: (state) => {
+      state.status = "pending";
+    },
+    [deleteComment.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [deleteComment.rejected]: (state, action) => {
+      state.status = "rejected";
+      console.error(action.payload.data.errors[0]);
+    },
+    [editComment.pending]: (state) => {
+      state.status = "pending";
+    },
+    [editComment.fulfilled]: (state, action) => {
+      state.status = "fulfilled";
+      state.allPosts = action.payload.data.posts;
+    },
+    [editComment.rejected]: (state, action) => {
       state.status = "rejected";
       console.error(action.payload.data.errors[0]);
     },
