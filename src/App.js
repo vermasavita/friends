@@ -89,7 +89,7 @@ const App = () => {
             }
           />
           <Route
-            path="/anyprofile"
+            path="/profile/:userId"
             element={
               <RequireAuth>
                 <Wrapper>

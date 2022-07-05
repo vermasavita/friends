@@ -1,26 +1,16 @@
 
 .search {
-  z-index: 1;
+  z-index: 10;
 }
 
 .errorbox {
   height: 100vh;
 }
-
-
 .error-img{
   height: 40%;
   width: 50%;
 }
 
-.widthe{
-  width: 100% !important;
-}
-
-.pointer{
-  border: 1px solid black;
-  position: sticky;
-}
 @media screen and (max-width: 767px) {
   .width {
     width: 90vw !important;
@@ -46,14 +36,3 @@
   }
 }
 
-@media screen and (max-width: 523px){
-  .menucomment{
-    margin-right: 50rem !important;
-  }
-}
-
-@media screen and (max-width: 516px){
-  .menucomment{
-    margin-right: 30rem !important;
-  }
-}

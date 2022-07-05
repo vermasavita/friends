@@ -10,7 +10,7 @@ const PostCardModalTwo = () => {
       <div className="bg-white my-2 py-2 w-full h-10s rounded-md">
         <div className="sm:w-11/12  flex justify-between w-full px-5 items-center">
           <p className="text-slate-400">Write something.....</p>
-          <i class="bx bx-plus text-xl text-blue-600 font-bold"></i>
+          <i className="bx bx-plus text-xl text-blue-600 font-bold"></i>
         </div>
       </div>
     </div>

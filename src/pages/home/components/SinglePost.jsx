@@ -9,8 +9,10 @@ import {
   likePost,
   removeBookmarkPost,
 } from "../postSlice";
+import { useNavigate } from "react-router-dom";
 
 const SinglePost = ({ post }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [editPost, setEditPost] = useState("");
   const { allUsers, authUser } = useSelector((state) => state.user);
@@ -65,7 +67,10 @@ const SinglePost = ({ post }) => {
         </div>
         <div className="flex justify-between  mx-1 px-1 w-full items-center">
           <div className="flex flex-col">
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center" onClick={() => {
+              user.username === userInfo?.username ? 
+              navigate("/profile") : navigate(`/profile/${userInfo.username}`)
+            }}>
               <span className="text-md font-semibold">
                 {user.username === post.username
                   ? `${authUser.firstName} ${authUser.lastName}`

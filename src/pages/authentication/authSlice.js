@@ -64,12 +64,15 @@ export const followUserHandler = createAsyncThunk(
 export const unfollowUser = createAsyncThunk(
   "post/follow",
   async ({ followUserId, token }, thunkAPI) => {
+    console.log(followUserId)
+    console.log(token)
     try {
       const response = await axios.post(
         `/api/users/unfollow/${followUserId}`,
         {},
         { headers: { authorization: token } }
       );
+      console.log(response)
       const data = { data: response.data, status: response.status };
       return data;
     } catch (error) {
