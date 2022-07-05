@@ -32,7 +32,7 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li className="py-2 text-xl flex gap-2 items-center px-3 hover:bg-white  list  shadow-current cursor-pointer rounded-md mb-3 md:mb-0 md:py-0">
-            <NavLink to="/bookmark">
+            <NavLink to="/anyprofile">
               <i className="bx bxs-bookmark-star mr-3 md:text-2xl"></i>
               <span className="md:hidden">Bookmark</span>
             </NavLink>

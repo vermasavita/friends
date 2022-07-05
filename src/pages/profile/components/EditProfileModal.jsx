@@ -7,12 +7,12 @@ import axios from "axios";
 
 const EditProfileModal = () => {
   const { editProfileModal } = useSelector((state) => state.profileModal);
-  const { token } = useSelector((state) => state.auth);
+  const { user, token } = useSelector((state) => state.auth);
   const { authUser } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [updateUserData, setUpdateUserData] = useState({});
+  const [loading, setLoading] = useState(false);
 
-  console.log(updateUserData )
   const updateUserInforHandler = () => {
     dispatch(updateUserInfo({ userData: { ...updateUserData }, token: token }));
     dispatch(closeEditProfileModal());
@@ -23,38 +23,21 @@ const EditProfileModal = () => {
     setUpdateUserData({ ...authUser });
   }, [authUser]);
 
-  const updateImageHandler = async (image) => {
-    try {
-      const data = new FormData();
-      data.append("file", image);
-      data.append("upload_preset", "sls1eclu");
-      const request = {
-        method: "POST",
-        body: "data",
-      };
-      await fetch(
-        "https://api.cloudinary.com/v1_1/dus3r5adq/image/upload",
-        request
-      )
-        .then((response) => response.json())
-        .then((json) => {
-          setUpdateUserData({ ...updateUserData, avatar: json.url });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } catch (error) {
-      console.log(error);
-    }
+  const updateImageHandler = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "sls1eclu");
+    setLoading(true);
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dus3r5adq/image/upload",
+      { method: "POST", body: data }
+    );
+    const file = await res.json();
+    setUpdateUserData({ ...updateImageHandler, avatar: file.secure_url });
+    setLoading(false);
   };
 
-  const updateImage = (files) => {
-    const formData = new FormData();
-    formData.append("file", files[0]);
-    formData.append("upload_preset", "sls1eclu");
-
-    axios.post("https://api.cloudinary.com/v1_1/dus3r5adq/image/upload", formData).then(response => console.log(response).catch(error => {console.log(error)}))
-  }
   return (
     <div
       className={`container fixed justify-center items-center ${
@@ -78,19 +61,23 @@ const EditProfileModal = () => {
             <div className="gap-2 text-slate-500 text-lg md:text-md">
               Avatar
             </div>
-            <div className="w-9/12 relative">
-              <img
-                src={updateUserData?.avatar}
-                className="h-12 w-12 object-cover rounded-full sm:h-10 sm:w-11 border"
-              />
-              <i className="text-slate-800 bx bxs-camera absolute top-7 left-7 text-lg cursor-pointer"></i>
-              <input
-                type="file"
-                className="absolute opacity-0 w-8  top-7 left-7 cursor-pointer"
-                accept="image/jpeg, image/png, image/svg+xml, image/jpg, image/webp image/apng, image/avif, image/gif,"
-                onChange={(e) => updateImage(e.target.files)}
-              />
-            </div>
+            {loading ? (
+              <span className="text-sm text-slate-500 text-left w-full ml-10">Updating...</span>
+            ) : (
+              <div className="w-9/12 relative">
+                <img
+                  src={updateUserData?.avatar}
+                  className="h-12 w-12 object-cover rounded-full sm:h-10 sm:w-10"
+                />
+                <i className="text-slate-800 bx bxs-camera absolute top-7 left-7 text-lg cursor-pointer"></i>
+                <input
+                  type="file"
+                  className="absolute opacity-0 w-8  top-7 left-7 cursor-pointer"
+                  accept="image/jpeg, image/png, image/svg+xml, image/jpg, image/webp, image/apng, image/avif, image/gif,"
+                  onChange={updateImageHandler}
+                />
+              </div>
+            )}
           </div>
           <div className="flex justify-between gap-4 mb-3">
             <div className="gap-2 text-slate-500 text-lg md:text-md">

@@ -7,3 +7,4 @@ export { Profile } from "./profile/Profile";
 export { Feed } from "./Feed/Feed";
 export { EditProfileModal } from "./profile/components/EditProfileModal"
 export { Error } from "./Error";
+export { IndividualUserProfile } from "./profile/components/IndividualUserProfile";

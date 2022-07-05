@@ -1,15 +1,10 @@
 .loader{
     padding: 0 !important;
+    margin: auto;
 }
 
 .wrapper-loader{
     margin: auto !important;
-}
-
-@media screen and (max-width: 770px) {
-    .loader{
-        margin: auto;
-    }   
 }
 
 @media screen and (max-width: 457px) {

@@ -57,7 +57,7 @@ const SinglePost = ({ post }) => {
           <img
             src={
               user.username === userInfo?.username
-                ? user.avatar
+                ? authUser.avatar
                 : userInfo.avatar
             }
             className="h-11 w-12 object-cover rounded-full sm:h-10 sm:w-11"
