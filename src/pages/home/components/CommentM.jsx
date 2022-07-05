@@ -2,9 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { deleteComment, editComment } from "../postSlice";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const CommentM = ({ item, commentInput, setCommentInput, postId }) => {
   const { user, token } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
   const [isEdit, setIsEdit] = useState(false);
   const dispatch = useDispatch();
 
@@ -39,7 +41,14 @@ const CommentM = ({ item, commentInput, setCommentInput, postId }) => {
           className="h-8 w-8 object-cover rounded-full"
           src={item.username === user.username ? user.avatar : item.avatar}
         />
-        <div className="text-black flex flex-col w-full">
+        <div
+          className="text-black flex flex-col w-full cursor-pointer"
+          onClick={() => {
+            user.username === item?.username
+              ? navigate("/profile")
+              : navigate(`/profile/${item.username}`);
+          }}
+        >
           <span className="text-md">{`${item.firstName} ${item.lastName}`}</span>
           {commentInput.editModal && item._id === commentInput.commentId ? (
             <div className="flex ">
@@ -76,9 +85,7 @@ const CommentM = ({ item, commentInput, setCommentInput, postId }) => {
                   className="rounded-full px-2 cursor-pointer relative"
                   onClick={() => setIsEdit(!isEdit)}
                 >
-                  <i
-                    className={`bx bx-dots-vertical-rounded opacity-60`}
-                  ></i>
+                  <i className={`bx bx-dots-vertical-rounded opacity-60`}></i>
 
                   {isEdit ? (
                     <ul className="border rounded-md bg-white absolute m-0 top-7 right-6 text-sm text-gray-500 flex flex-col p-1">

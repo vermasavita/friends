@@ -1,17 +1,22 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { followUserHandler } from "../../pages/authentication/authSlice";
+import { useNavigate } from "react-router-dom";
 const Follow = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { allUsers } = useSelector((state) => state.user);
   const { user, token } = useSelector((state) => state.auth);
   const [suggestedUser, setSuggestedUser] = useState([]);
 
   useEffect(() => {
     setSuggestedUser(
-      allUsers?.filter((item) => item.username !== user.username)?.filter(
+      allUsers
+        ?.filter((item) => item.username !== user.username)
+        ?.filter(
           (item) => !user.following.find((itemTwo) => itemTwo._id === item._id)
-        )?.slice(0, 4)
+        )
+        ?.slice(0, 4)
     );
   }, [user, allUsers]);
 
@@ -34,7 +39,14 @@ const Follow = () => {
                   />
                 </div>
                 <div className="flex justify-between w-5/6 cursor-pointer ">
-                  <div className="flex flex-col cursor-pointer">
+                  <div
+                    className="flex flex-col cursor-pointer"
+                    onClick={() => {
+                      user.username === suggestedUser?.username
+                        ? navigate("/profile")
+                        : navigate(`/profile/${suggestedUser.username}`);
+                    }}
+                  >
                     <span className="text-sm font-semibold">{`${suggestedUser.firstName} ${suggestedUser.lastName}`}</span>
                     <span className="text-xs">{suggestedUser.username}</span>
                   </div>
@@ -50,7 +62,7 @@ const Follow = () => {
           ))
         ) : (
           <div className="text-slate-500 text-center font-semibold pb-5">
-              No suggestion
+            No suggestion
           </div>
         )}
       </div>
