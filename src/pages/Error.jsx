@@ -11,7 +11,7 @@ const Error = () => {
       />
       <div>
         <button
-          className="bg-rose-600 px-2 py-1 cursor-pointer text-white rounded-md"
+          className="bg-blue-400 px-2 py-1 cursor-pointer text-white rounded-md"
           onClick={() => navigate("/login")}
         >
           Back to Login

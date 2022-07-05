@@ -48,7 +48,7 @@ const EditProfileModal = () => {
         <div className="flex items-center justify-between ">
           <h2 className="text-lg md:text-md">Edit Profile</h2>
           <button
-            className=" border-rose-600 px-1.5"
+            className=" border-blue-500 px-1.5"
             onClick={() => {
               dispatch(closeEditProfileModal());
             }}
@@ -137,7 +137,7 @@ const EditProfileModal = () => {
           <div className="flex justify-end">
             <button
               className={
-                "bg-rose-600 p-2 px-6 w-fit rounded-md text-white cursor-pointer"
+                "bg-blue-400 p-2 px-6 w-fit rounded-md text-white cursor-pointer"
               }
               onClick={() => updateUserInforHandler()}
             >

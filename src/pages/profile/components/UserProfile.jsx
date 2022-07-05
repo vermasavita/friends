@@ -25,7 +25,7 @@ const UserProfile = () => {
 
   return (
     <div
-      className="bg-sky-100  flex flex-col px-2 py-2 rounded-md  w-full mt-3"
+      className="bg-sky-50 flex flex-col px-2 py-1 rounded-md  w-full mt-1"
       key={authUser._id}
     >
       <div className="flex flex-col items-center">
@@ -40,17 +40,26 @@ const UserProfile = () => {
         <span className="text-sm text-gray-500">@{authUser.username}</span>
         <button
           onClick={() => dispatch(openEditProfileModal())}
-          className="mt-5 border rounded-md px-6 py-1.5 bg-rose-600 text-white active:bg-slate-200 active:text-black cursor-pointer"
+          className="mt-5 border rounded-md px-6 py-1.5 bg-blue-400 text-white active:bg-slate-200 active:text-black cursor-pointer"
         >
           Edit
         </button>
         <div className="font-semibold text-gray-500 mt-3">{authUser.bio}</div>
-        <div className="text-sm text-blue-600">{authUser.website}</div>
+        <div className="text-sm text-blue-400">
+          <a href={authUser.website} target="_blank">
+            {authUser.website}
+          </a>
+        </div>
 
         <div className="font-semibold text-gray-500 mt-3 flex gap-5">
           <span>{userPost.length} Posts</span>
           <span>{user.followers.length} Followers</span>
-          <span className="cursor-pointer border-b-5" onClick={() => dispatch(openFollowingModal())}>{user?.following.length} Following</span>
+          <span
+            className="cursor-pointer border-b-5"
+            onClick={() => dispatch(openFollowingModal())}
+          >
+            {user?.following.length} Following
+          </span>
         </div>
       </div>
     </div>

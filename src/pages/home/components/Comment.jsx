@@ -53,7 +53,7 @@ const Comment = ({ post }) => {
           />
         </div>
         <button
-          className={`px-4 text-cyan-800 ${
+          className={`px-4 text-blue-500 ${
             commentInput.text === "" &&
             "hover: cursor-not-allowed text-slate-400"
           }

@@ -60,8 +60,8 @@ const Feed = () => {
   };
 
   return (
-    <div className="bg-sky-100 feed-width flex w-5/6 xl:w-full h-13 flex-col ">
-      <div className="rounded-md flex justify-between items-center gap-1 bg-sky-100">
+    <div className="bg-sky-50 feed-width flex w-5/6 xl:w-full h-13 flex-col ">
+      <div className="rounded-md flex justify-between items-center gap-1 bg-sky-50">
         <div className="w-1/2 shadow rounded-md bg-white">
           <button
             onClick={() => trendingHandler()}

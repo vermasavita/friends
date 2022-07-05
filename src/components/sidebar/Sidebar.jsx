@@ -9,11 +9,11 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`sticky top-0 w-1/4 lg:w-2/5 mr-3 px-10 lg:px-5 h-fit sidebar md:fixed md:min-w-full md:mr-0 md:px-0 md:bg-rose-600 md:h-13 `}
+      className={`sticky top-0 w-1/4 lg:w-2/5 mr-3 px-10 lg:px-5 h-fit sidebar md:fixed md:min-w-full md:mr-0 md:px-0 md:bg-blue-500 md:h-13 `}
     >
       <NavLink to="/">
         <div className="px-3 flex title items-center justify-center mt-3 lg:justify-start lg:px-0 md:mt-0">
-          <span className="text-3xl font-bold md:hidden lg:px-4 text-rose-600">Friends</span>
+          <span className="text-3xl font-bold md:hidden lg:px-4 text-blue-400">Friends</span>
         </div>
       </NavLink>
 
@@ -58,7 +58,7 @@ const Sidebar = () => {
             </NavLink>
           </li>
 
-          <li className="py-2 justify-center bg-rose-600 text-white text-xl flex gap-2 items-center px-3 cursor-pointer rounded-md mb-3 md:hidden">
+          <li className="py-2 justify-center bg-blue-400 text-white text-xl flex gap-2 items-center px-3 cursor-pointer rounded-md mb-3 md:hidden">
             <button
               className="w-full"
               onClick={() => dispatch(openPostCardModal())}

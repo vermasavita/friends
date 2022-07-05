@@ -24,10 +24,9 @@ const IndividualUserProfile = () => {
     setIndividualUser(allUsers.find((item) => item.username === userId.userId));
   }, [allUsers, userId]);
 
-
   useEffect(() => {
-    dispatch(getUsers())
-  }, [allUsers])
+    dispatch(getUsers());
+  }, [allUsers]);
 
   useEffect(() => {
     dispatch(openLoader());
@@ -38,21 +37,20 @@ const IndividualUserProfile = () => {
     dispatch(getUserPost(individualUser?._id));
   }, [individualUser, allPosts]);
 
-
   const isFollowing = individualUser?.followers?.some(
     (item) => item.username === user.username
   );
 
-  console.log(isFollowing)
+  console.log(isFollowing);
   const followUser = (_id) => {
-    if(isFollowing) {
+    if (isFollowing) {
       dispatch(unfollowUser({ followUserId: _id, token: token }));
     } else {
       dispatch(followUserHandler({ followUserId: _id, token: token }));
     }
   };
 
-  console.log(individualUser)
+  console.log(individualUser);
 
   return (
     <div className="w-5/6 xl:w-full px-1 mb-8">
@@ -60,7 +58,7 @@ const IndividualUserProfile = () => {
         <Loader />
       ) : (
         <div className="w-full" key={individualUser._id}>
-          <div className="bg-sky-100  flex flex-col px-2 py-2 rounded-md  w-full mt-3">
+          <div className="bg-sky-50  flex flex-col px-2 py-2 rounded-md  w-full mt-3">
             <div className="flex flex-col items-center">
               <div className="flex justify-between items-center h-20 w-20 rounded-full">
                 <img
@@ -77,21 +75,33 @@ const IndividualUserProfile = () => {
               </span>
               <button
                 onClick={() => followUser(individualUser?._id)}
-                className="mt-5 border rounded-md px-6 py-1.5 bg-rose-600 text-white active:bg-slate-200 active:text-black cursor-pointer"
+                className="mt-5 border rounded-md px-6 py-1.5 bg-blue-400 text-white active:bg-slate-200 active:text-black cursor-pointer"
               >
-               {!isFollowing ? "Follow" : "UnFolllow"}
+                {!isFollowing ? "Follow" : "UnFolllow"}
               </button>
               <div className="font-semibold text-gray-500 mt-3">
                 {individualUser.bio}
               </div>
-              <div className="text-sm text-blue-600">
-                {individualUser.website}
+              <div className="text-sm text-blue-400">
+                <a href={individualUser.website} target="_blank">
+                  {individualUser.website}
+                </a>
               </div>
 
               <div className="font-semibold text-gray-500 mt-3 flex gap-5">
                 <span>{userPosts?.length} Posts</span>
-                <span>{individualUser?.followers?.length > 0 ? individualUser?.followers?.length : 0} Followers</span>
-                <span className="cursor-pointer border-b-5">{individualUser?.following?.length > 0 ? individualUser?.following?.length : 0} Following</span>
+                <span>
+                  {individualUser?.followers?.length > 0
+                    ? individualUser?.followers?.length
+                    : 0}{" "}
+                  Followers
+                </span>
+                <span className="cursor-pointer border-b-5">
+                  {individualUser?.following?.length > 0
+                    ? individualUser?.following?.length
+                    : 0}{" "}
+                  Following
+                </span>
               </div>
             </div>
           </div>
