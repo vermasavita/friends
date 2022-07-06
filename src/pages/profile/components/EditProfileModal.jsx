@@ -3,11 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { closeEditProfileModal } from "../profileModalSlice";
 import { updateUserInfo } from "../userSlice";
-import axios from "axios";
 
 const EditProfileModal = () => {
   const { editProfileModal } = useSelector((state) => state.profileModal);
-  const { user, token } = useSelector((state) => state.auth);
+  const { token } = useSelector((state) => state.auth);
   const { authUser } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [updateUserData, setUpdateUserData] = useState({});
@@ -67,6 +66,7 @@ const EditProfileModal = () => {
               <div className="w-9/12 relative">
                 <img
                   src={updateUserData?.avatar}
+                  alt="user_image"
                   className="h-12 w-12 object-cover rounded-full sm:h-10 sm:w-10"
                 />
                 <i className="text-slate-800 bx bxs-camera absolute top-7 left-7 text-lg cursor-pointer"></i>

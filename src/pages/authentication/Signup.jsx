@@ -1,4 +1,3 @@
-import logo from "../../Assets/Friends.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";

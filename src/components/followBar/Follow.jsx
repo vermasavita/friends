@@ -36,6 +36,7 @@ const Follow = () => {
                   <img
                     className="h-9 w-9 rounded-full self-cente cursor-pointer object-cover "
                     src={suggestedUser.avatar}
+                    alt={suggestedUser.avatar}
                   />
                 </div>
                 <div className="flex justify-between w-5/6 cursor-pointer ">

@@ -26,11 +26,6 @@ const CommentM = ({ item, commentInput, setCommentInput, postId }) => {
     }
   };
 
-  const handler = (_id, commentId) => {
-    if (_id === commentId) {
-      setIsEdit(!isEdit);
-    }
-  };
   return (
     <div
       key={item._id}
@@ -40,6 +35,7 @@ const CommentM = ({ item, commentInput, setCommentInput, postId }) => {
         <img
           className="h-8 w-8 object-cover rounded-full"
           src={item.username === user.username ? user.avatar : item.avatar}
+          alt={item.username === user.username ? "user_avatar" : item.avatar}
         />
         <div
           className="text-black flex flex-col w-full cursor-pointer"

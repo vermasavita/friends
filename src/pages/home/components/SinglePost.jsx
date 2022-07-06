@@ -63,6 +63,7 @@ const SinglePost = ({ post }) => {
                 : userInfo.avatar
             }
             className="h-11 w-12 object-cover rounded-full sm:h-10 sm:w-11"
+            alt="avatar"
           />
         </div>
         <div className="flex justify-between  mx-1 px-1 w-full items-center">

@@ -38,6 +38,7 @@ const FollowingModal = () => {
                     <img
                       className={"h-10 w-10 object-cover rounded-full"}
                       src={following.avatar}
+                      alt={following.avatar}
                     />
                     <div className="flex flex-col">
                       <h1>{`${following.firstName} ${following.lastName}`}</h1>

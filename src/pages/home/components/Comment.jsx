@@ -3,13 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import {
   addComment,
-  editComment,
 } from "../postSlice";
 
 import { CommentM } from "./CommentM";
 
 const Comment = ({ post }) => {
-  const [showCommentAction, setShowCommentAction] = useState(false);
 
   const { user, token } = useSelector((state) => state.auth);
   const [commentInput, setCommentInput] = useState({
@@ -41,7 +39,7 @@ const Comment = ({ post }) => {
   return (
     <div className="">
       <div className="flex mb-3 ">
-        <img className="h-8 w-8 object-cover rounded-full" src={user.avatar} />
+        <img className="h-8 w-8 object-cover rounded-full" src={user.avatar} alt={user.avatar}/>
         <div className="border gap-2 border-gray-200  px-2 py-1 ml-3 border-solid grow flex items-center rounded-md bg-white">
           <input
             className="grow focus:outline-none sm:text-sm bg-white"

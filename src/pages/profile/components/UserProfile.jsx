@@ -32,6 +32,7 @@ const UserProfile = () => {
         <div className="flex justify-between items-center h-20 w-20 rounded-full">
           <img
             src={authUser.avatar}
+            alt="avatar"
             className="h-18 w-20 object-cover rounded-full sm:h-16 sm:w-16 border-0"
           />
         </div>
