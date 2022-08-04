@@ -31,7 +31,7 @@ const FollowingModal = () => {
         </div>
         {user?.following?.length > 0 ? (
           user.following.map((following) => (
-            <div className="mt-6 w-full">
+            <div className="mt-6 w-full" key={following._id}>
               <ul className="flex flex-col">
                 <li className="flex justify-between" key={following._id}>
                   <div className="flex gap-4">
