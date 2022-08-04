@@ -20,10 +20,6 @@ const Feed = () => {
 
   useEffect(() => {
     dispatch(openLoader());
-    setTimeout(() => dispatch(closeLoader(), 1000));
-  }, []);
-
-  useEffect(() => {
     if (allPosts) {
       setFeedPost(
         allPosts
@@ -41,7 +37,10 @@ const Feed = () => {
 
   useEffect(() => {
     dispatch(getUserHandler(user._id));
-  }, [allPosts]);
+    if(feedPost.length > 0){
+      setTimeout(() => dispatch(closeLoader()), 1000)
+    }
+  }, [allPosts, feedPost]);
 
   const trendingHandler = () => {
     dispatch(openLoader());
@@ -79,6 +78,7 @@ const Feed = () => {
           </button>
         </div>
       </div>
+      {/* <Loader /> */}
       {loader ? (
         <Loader />
       ) : trendingPost.isTrending ? (
