@@ -33,9 +33,6 @@ const Comment = ({ post }) => {
     }
   };
 
-
- 
-
   return (
     <div className="">
       <div className="flex mb-3 ">

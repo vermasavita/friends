@@ -1,4 +1,4 @@
-import { Follow, PostCardModalTwo, Search, Sidebar } from "../../components";
+import { Follow, PostCardModalTwo, Sidebar } from "../../components";
 
 const Wrapper = ({ children }) => {
   return (

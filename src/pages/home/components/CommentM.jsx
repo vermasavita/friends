@@ -37,15 +37,15 @@ const CommentM = ({ item, commentInput, setCommentInput, postId }) => {
           src={item.username === user.username ? user.avatar : item.avatar}
           alt={item.username === user.username ? "user_avatar" : item.avatar}
         />
-        <div
-          className="text-black flex flex-col w-full cursor-pointer"
-          onClick={() => {
-            user.username === item?.username
-              ? navigate("/profile")
-              : navigate(`/profile/${item.username}`);
-          }}
-        >
-          <span className="text-md">{`${item.firstName} ${item.lastName}`}</span>
+        <div className="text-black flex flex-col w-full cursor-pointer">
+          <span
+            onClick={() => {
+              user.username === item?.username
+                ? navigate("/profile")
+                : navigate(`/profile/${item.username}`);
+            }}
+            className="text-md"
+          >{`${item.firstName} ${item.lastName}`}</span>
           {commentInput.editModal && item._id === commentInput.commentId ? (
             <div className="flex ">
               <input
