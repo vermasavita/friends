@@ -142,7 +142,7 @@ const Signup = () => {
               </button>
               <div className="font-semibold text-center">
                 <NavLink to="/login">
-                  <button>Create New Account</button>
+                  <button>Already have an account</button>
                 </NavLink>
               </div>
             </div>
