@@ -110,7 +110,7 @@ const Signup = () => {
                   Password:
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   name="password"
                   id="password"
                   value={userIpt.password}
@@ -125,7 +125,7 @@ const Signup = () => {
                     Confirm Password:
                   </label>
                   <input
-                    type="text"
+                    type="password"
                     name="confirmPassword"
                     id="confirmPassword"
                     value={userIpt.confirmPassword}
